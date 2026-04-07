@@ -1,1 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AboutHistory.id | Menelusuri Jejak Masa Lalu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap');
+        
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, .font-serif { font-family: 'Playfair Display', serif; }
+        
+        .hero-gradient {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1461360370896-922624d12aa1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800">
 
+    <nav class="flex items-center justify-between px-8 py-6 bg-white shadow-sm sticky top-0 z-50">
+        <div class="text-2xl font-bold tracking-tighter text-amber-800">
+            ABOUT<span class="text-stone-500">HISTORY</span>.ID
+        </div>
+        <div class="hidden md:flex space-x-8 font-medium">
+            <a href="#" class="hover:text-amber-700 transition">Beranda</a>
+            <a href="#about" class="hover:text-amber-700 transition">Tentang Kami</a>
+            <a href="#services" class="hover:text-amber-700 transition">Layanan</a>
+            <a href="#archive" class="hover:text-amber-700 transition">Arsip</a>
+        </div>
+        <a href="#contact" class="bg-amber-800 text-white px-5 py-2 rounded-full hover:bg-amber-900 transition">Kontak</a>
+    </nav>
+
+    <header class="hero-gradient h-[80vh] flex items-center justify-center text-center text-white px-4">
+        <div class="max-w-3xl">
+            <h1 class="text-5xl md:text-7xl mb-6">Menghidupkan Kembali Narasi Masa Lalu</h1>
+            <p class="text-lg md:text-xl font-light mb-8 opacity-90">Solusi riset, dokumentasi, dan digitalisasi sejarah untuk instansi, korporasi, dan personal.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-md font-semibold transition">Mulai Penelusuran</button>
+                <button class="border border-white hover:bg-white hover:text-stone-900 text-white px-8 py-3 rounded-md font-semibold transition">Lihat Portofolio</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-12 bg-amber-800 text-amber-50">
+        <div class="max-w-6xl mx-auto px-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+                <div class="text-4xl font-bold mb-1">500+</div>
+                <div class="text-sm uppercase tracking-widest opacity-75">Arsip Digital</div>
+            </div>
+            <div>
+                <div class="text-4xl font-bold mb-1">120+</div>
+                <div class="text-sm uppercase tracking-widest opacity-75">Proyek Riset</div>
+            </div>
+            <div>
+                <div class="text-4xl font-bold mb-1">50+</div>
+                <div class="text-sm uppercase tracking-widest opacity-75">Klien Korporasi</div>
+            </div>
+            <div>
+                <div class="text-4xl font-bold mb-1">15+</div>
+                <div class="text-sm uppercase tracking-widest opacity-75">Ahli Sejarah</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 max-w-6xl mx-auto px-8 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+            <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="History Book" class="rounded-lg shadow-2xl">
+        </div>
+        <div>
+            <h2 class="text-4xl mb-6">Mengapa Sejarah Penting?</h2>
+            <p class="text-stone-600 mb-6 leading-relaxed">
+                Di <strong>AboutHistory.id</strong>, kami percaya bahwa setiap entitas memiliki cerita yang membentuk identitasnya saat ini. Kami membantu Anda merangkai kepingan masa lalu menjadi narasi yang kuat dan bermakna untuk masa depan.
+            </p>
+            <ul class="space-y-4">
+                <li class="flex items-start">
+                    <i class="fas fa-check-circle text-amber-700 mt-1 mr-3"></i>
+                    <span>Riset mendalam berbasis data primer dan sekunder.</span>
+                </li>
+                <li class="flex items-start">
+                    <i class="fas fa-check-circle text-amber-700 mt-1 mr-3"></i>
+                    <span>Penyajian konten sejarah yang interaktif dan modern.</span>
+                </li>
+                <li class="flex items-start">
+                    <i class="fas fa-check-circle text-amber-700 mt-1 mr-3"></i>
+                    <span>Tim ahli dari latar belakang akademis sejarah murni.</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 bg-stone-200">
+        <div class="max-w-6xl mx-auto px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl mb-4">Layanan Unggulan Kami</h2>
+                <p class="text-stone-500">Kami menyediakan berbagai layanan profesional di bidang kesejarahan.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="w-14 h-14 bg-amber-100 text-amber-800 rounded-lg flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Penulisan Buku Biografi</h3>
+                    <p class="text-stone-600">Mengabadikan perjalanan hidup tokoh atau sejarah perusahaan dalam narasi yang menggugah.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="w-14 h-14 bg-amber-100 text-amber-800 rounded-lg flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-monument"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Kurasi Museum & Pameran</h3>
+                    <p class="text-stone-600">Membantu perancangan konsep hingga tata letak artefak untuk museum dan eksibisi sejarah.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="w-14 h-14 bg-amber-100 text-amber-800 rounded-lg flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-fingerprint"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Digitalisasi Arsip</h3>
+                    <p class="text-stone-600">Mengonversi dokumen fisik kuno menjadi format digital yang aman dan mudah diakses.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-stone-900 text-stone-400 py-16">
+        <div class="max-w-6xl mx-auto px-8 grid md:grid-cols-4 gap-12">
+            <div class="col-span-2">
+                <div class="text-2xl font-bold text-white mb-6">ABOUT<span class="text-amber-600">HISTORY</span>.ID</div>
+                <p class="mb-6 max-w-sm">Jasa profesional riset dan dokumentasi sejarah. Mari bicara tentang bagaimana sejarah Anda bisa menginspirasi dunia.</p>
+                <div class="flex space-x-4 text-xl">
+                    <a href="#" class="hover:text-white"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-white"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="hover:text-white"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6">Tautan</h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="hover:text-amber-500">Blog Sejarah</a></li>
+                    <li><a href="#" class="hover:text-amber-500">FAQ</a></li>
+                    <li><a href="#" class="hover:text-amber-500">Kebijakan Privasi</a></li>
+                    <li><a href="#" class="hover:text-amber-500">Karir</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6">Kontak</h4>
+                <p class="text-sm">Email: info@abouthistory.id</p>
+                <p class="text-sm mt-2">WhatsApp: +62 812-3456-7890</p>
+                <p class="text-sm mt-2 text-stone-500 italic">Jakarta, Indonesia</p>
+            </div>
+        </div>
+        <div class="text-center mt-16 pt-8 border-t border-stone-800 text-xs uppercase tracking-widest">
+            &copy; 2026 AboutHistory.id. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
