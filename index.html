@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AboutHistory.id | Menelusuri Jejak Masa Lalu</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap');
         
         body { font-family: 'Inter', sans-serif; }
         h1, h2, .font-serif { font-family: 'Playfair Display', serif; }
         
-        /* Animasi CSS untuk slider */
+        /* Animasi Slider Background */
         @keyframes slide {
             0%, 15%   { transform: translateX(0%); }
             25%, 40%  { transform: translateX(-20%); }
@@ -32,6 +34,7 @@
         <div class="text-2xl font-bold tracking-tighter text-amber-800">
             ABOUT<span class="text-stone-500">HISTORY</span>.ID
         </div>
+        
         <div class="hidden md:flex space-x-8 font-medium items-center">
             <a href="#" class="hover:text-amber-700 transition">Beranda</a>
             <a href="#about" class="hover:text-amber-700 transition">Tentang Kami</a>
@@ -43,7 +46,6 @@
             <button class="bg-amber-800 text-white px-5 py-2 rounded-full hover:bg-amber-900 transition flex items-center gap-2">
                 Kontak <i class="fas fa-chevron-down text-xs"></i>
             </button>
-            
             <div class="absolute right-0 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                 <div class="bg-white rounded-lg shadow-xl py-2 border border-stone-100 overflow-hidden">
                     <a href="https://wa.me/6281234567890" target="_blank" class="flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-amber-50 hover:text-amber-800 transition">
@@ -69,13 +71,12 @@
             <div class="w-1/5 h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
             <div class="w-1/5 h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1461360370896-922624d12aa1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
         </div>
-
+        
         <div class="absolute inset-0 z-10 bg-black/60"></div>
-
+        
         <div class="relative z-20 max-w-3xl">
-            <h1 class="text-5xl md:text-7xl mb-6">Menghidupkan Kembali Narasi Masa Lalu</h1>
+            <h1 class="text-5xl md:text-7xl mb-6 font-serif">Menghidupkan Kembali Narasi Masa Lalu</h1>
             <p class="text-lg md:text-xl font-light mb-8 opacity-90">Solusi riset, dokumentasi, dan digitalisasi sejarah untuk instansi, korporasi, dan personal.</p>
-            
             <div class="flex justify-center">
                 <a href="#portfolio" class="bg-amber-600 hover:bg-amber-700 text-white px-10 py-3.5 rounded-md font-semibold transition shadow-lg inline-block">Lihat Portofolio</a>
             </div>
@@ -108,7 +109,7 @@
             <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="History Book" class="rounded-lg shadow-2xl">
         </div>
         <div>
-            <h2 class="text-4xl mb-6">Mengapa Sejarah Penting?</h2>
+            <h2 class="text-4xl mb-6 font-serif">Mengapa Sejarah Penting?</h2>
             <p class="text-stone-600 mb-6 leading-relaxed">
                 Di <strong>AboutHistory.id</strong>, kami percaya bahwa setiap entitas memiliki cerita yang membentuk identitasnya saat ini. Kami membantu Anda merangkai kepingan masa lalu menjadi narasi yang kuat dan bermakna untuk masa depan.
             </p>
@@ -132,7 +133,7 @@
     <section id="services" class="py-20 bg-stone-200">
         <div class="max-w-6xl mx-auto px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl mb-4">Layanan Unggulan Kami</h2>
+                <h2 class="text-4xl mb-4 font-serif">Layanan Unggulan Kami</h2>
                 <p class="text-stone-500">Kami menyediakan berbagai layanan profesional di bidang kesejarahan.</p>
             </div>
             <div class="grid md:grid-cols-3 gap-8">
@@ -140,21 +141,21 @@
                     <div class="w-14 h-14 bg-amber-100 text-amber-800 rounded-lg flex items-center justify-center text-2xl mb-6">
                         <i class="fas fa-book-open"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Penulisan Buku Biografi</h3>
+                    <h3 class="text-xl font-bold mb-4 font-serif">Penulisan Buku Biografi</h3>
                     <p class="text-stone-600">Mengabadikan perjalanan hidup tokoh atau sejarah perusahaan dalam narasi yang menggugah.</p>
                 </div>
                 <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
                     <div class="w-14 h-14 bg-amber-100 text-amber-800 rounded-lg flex items-center justify-center text-2xl mb-6">
                         <i class="fas fa-monument"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Kurasi Museum & Pameran</h3>
+                    <h3 class="text-xl font-bold mb-4 font-serif">Kurasi Museum & Pameran</h3>
                     <p class="text-stone-600">Membantu perancangan konsep hingga tata letak artefak untuk museum dan eksibisi sejarah.</p>
                 </div>
                 <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
                     <div class="w-14 h-14 bg-amber-100 text-amber-800 rounded-lg flex items-center justify-center text-2xl mb-6">
                         <i class="fas fa-fingerprint"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Digitalisasi Arsip</h3>
+                    <h3 class="text-xl font-bold mb-4 font-serif">Digitalisasi Arsip</h3>
                     <p class="text-stone-600">Mengonversi dokumen fisik kuno menjadi format digital yang aman dan mudah diakses.</p>
                 </div>
             </div>
@@ -196,9 +197,8 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const counters = document.querySelectorAll('.counter');
-            const speed = 200; // Semakin kecil angkanya, semakin lambat animasinya
+            const speed = 100; // Kecepatan hitungan
 
-            // Fungsi untuk menghitung angka
             const animateCounter = (counter) => {
                 const target = +counter.getAttribute('data-target');
                 const count = +counter.innerText;
@@ -206,25 +206,22 @@
 
                 if (count < target) {
                     counter.innerText = Math.ceil(count + increment);
-                    setTimeout(() => animateCounter(counter), 10);
+                    setTimeout(() => animateCounter(counter), 15);
                 } else {
                     counter.innerText = target;
                 }
             };
 
-            // Intersection Observer untuk mendeteksi kapan section stats masuk ke layar
             const observerOptions = {
                 root: null,
                 rootMargin: '0px',
-                threshold: 0.5 // Animasi mulai saat 50% section terlihat di layar
+                threshold: 0.5
             };
 
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        // Jalankan animasi untuk setiap angka
                         counters.forEach(counter => animateCounter(counter));
-                        // Hentikan observer agar animasi tidak berulang saat di-scroll lagi
                         observer.unobserve(entry.target);
                     }
                 });
