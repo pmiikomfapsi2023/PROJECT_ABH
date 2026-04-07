@@ -12,10 +12,18 @@
         body { font-family: 'Inter', sans-serif; }
         h1, h2, .font-serif { font-family: 'Playfair Display', serif; }
         
-        .hero-gradient {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1461360370896-922624d12aa1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
+        /* Animasi CSS untuk slider (menggeser container secara horizontal) */
+        @keyframes slide {
+            0%, 15%   { transform: translateX(0%); }
+            25%, 40%  { transform: translateX(-20%); }
+            50%, 65%  { transform: translateX(-40%); }
+            75%, 90%  { transform: translateX(-60%); }
+            100%      { transform: translateX(-80%); } /* Gambar ke-5, agar transisi kembali ke 0% terlihat mulus */
+        }
+        
+        .animate-slider {
+            /* Durasi 20 detik, mengulang terus menerus, dengan pergerakan transisi yang mulus */
+            animation: slide 20s infinite cubic-bezier(0.4, 0, 0.2, 1);
         }
     </style>
 </head>
@@ -34,8 +42,19 @@
         <a href="#contact" class="bg-amber-800 text-white px-5 py-2 rounded-full hover:bg-amber-900 transition">Kontak</a>
     </nav>
 
-    <header class="hero-gradient h-[80vh] flex items-center justify-center text-center text-white px-4">
-        <div class="max-w-3xl">
+    <header class="relative h-[80vh] flex items-center justify-center text-center text-white px-4 overflow-hidden">
+        
+        <div class="absolute inset-0 z-0 flex w-[500%] animate-slider">
+            <div class="w-1/5 h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1461360370896-922624d12aa1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
+            <div class="w-1/5 h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
+            <div class="w-1/5 h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
+            <div class="w-1/5 h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
+            <div class="w-1/5 h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1461360370896-922624d12aa1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
+        </div>
+
+        <div class="absolute inset-0 z-10 bg-black/60"></div>
+
+        <div class="relative z-20 max-w-3xl">
             <h1 class="text-5xl md:text-7xl mb-6">Menghidupkan Kembali Narasi Masa Lalu</h1>
             <p class="text-lg md:text-xl font-light mb-8 opacity-90">Solusi riset, dokumentasi, dan digitalisasi sejarah untuk instansi, korporasi, dan personal.</p>
             <div class="flex flex-wrap justify-center gap-4">
@@ -102,59 +121,3 @@
                 <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
                     <div class="w-14 h-14 bg-amber-100 text-amber-800 rounded-lg flex items-center justify-center text-2xl mb-6">
                         <i class="fas fa-book-open"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Penulisan Buku Biografi</h3>
-                    <p class="text-stone-600">Mengabadikan perjalanan hidup tokoh atau sejarah perusahaan dalam narasi yang menggugah.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
-                    <div class="w-14 h-14 bg-amber-100 text-amber-800 rounded-lg flex items-center justify-center text-2xl mb-6">
-                        <i class="fas fa-monument"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Kurasi Museum & Pameran</h3>
-                    <p class="text-stone-600">Membantu perancangan konsep hingga tata letak artefak untuk museum dan eksibisi sejarah.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
-                    <div class="w-14 h-14 bg-amber-100 text-amber-800 rounded-lg flex items-center justify-center text-2xl mb-6">
-                        <i class="fas fa-fingerprint"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Digitalisasi Arsip</h3>
-                    <p class="text-stone-600">Mengonversi dokumen fisik kuno menjadi format digital yang aman dan mudah diakses.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contact" class="bg-stone-900 text-stone-400 py-16">
-        <div class="max-w-6xl mx-auto px-8 grid md:grid-cols-4 gap-12">
-            <div class="col-span-2">
-                <div class="text-2xl font-bold text-white mb-6">ABOUT<span class="text-amber-600">HISTORY</span>.ID</div>
-                <p class="mb-6 max-w-sm">Jasa profesional riset dan dokumentasi sejarah. Mari bicara tentang bagaimana sejarah Anda bisa menginspirasi dunia.</p>
-                <div class="flex space-x-4 text-xl">
-                    <a href="#" class="hover:text-white"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="hover:text-white"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="hover:text-white"><i class="fab fa-facebook"></i></a>
-                </div>
-            </div>
-            <div>
-                <h4 class="text-white font-bold mb-6">Tautan</h4>
-                <ul class="space-y-3">
-                    <li><a href="#" class="hover:text-amber-500">Blog Sejarah</a></li>
-                    <li><a href="#" class="hover:text-amber-500">FAQ</a></li>
-                    <li><a href="#" class="hover:text-amber-500">Kebijakan Privasi</a></li>
-                    <li><a href="#" class="hover:text-amber-500">Karir</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-bold mb-6">Kontak</h4>
-                <p class="text-sm">Email: info@abouthistory.id</p>
-                <p class="text-sm mt-2">WhatsApp: +62 812-3456-7890</p>
-                <p class="text-sm mt-2 text-stone-500 italic">Jakarta, Indonesia</p>
-            </div>
-        </div>
-        <div class="text-center mt-16 pt-8 border-t border-stone-800 text-xs uppercase tracking-widest">
-            &copy; 2026 AboutHistory.id. All Rights Reserved.
-        </div>
-    </footer>
-
-</body>
-</html>
