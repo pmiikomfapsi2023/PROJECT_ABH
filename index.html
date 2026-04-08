@@ -121,12 +121,12 @@
         
         <div class="relative z-20 max-w-4xl mx-auto w-full px-4">
             <h1 class="mb-6 font-serif uppercase tracking-wide">
-                <div class="flex items-end justify-center gap-2 md:gap-5 mb-1 md:mb-2">
+                <div class="relative flex items-end justify-center gap-2 md:gap-5 mb-1 md:mb-2 leading-none">
                     <span class="text-4xl sm:text-5xl md:text-[5.5rem] font-bold leading-none">JELAJAHI</span>
-                    <span class="text-sm sm:text-xl md:text-3xl font-bold tracking-widest pb-1 md:pb-2">MASA LALU</span>
+                    <span class="text-[10px] sm:text-xl md:text-3xl font-bold tracking-[0.2em] md:tracking-widest pb-1 md:pb-3 leading-none opacity-90">MASA LALU</span>
                 </div>
-                <div class="flex items-end justify-center gap-2 md:gap-5">
-                    <span class="text-sm sm:text-xl md:text-3xl font-bold tracking-widest pb-1 md:pb-2">PAHAMI</span>
+                <div class="relative flex items-end justify-center gap-2 md:gap-5 leading-none">
+                    <span class="text-[10px] sm:text-xl md:text-3xl font-bold tracking-[0.2em] md:tracking-widest pb-1 md:pb-3 leading-none opacity-90">PAHAMI</span>
                     <span class="text-4xl sm:text-5xl md:text-[5.5rem] font-bold leading-none">MASA KINI</span>
                 </div>
             </h1>
@@ -220,7 +220,7 @@
         <div class="max-w-6xl mx-auto px-6 md:px-8 grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-12">
             <div class="col-span-1 md:col-span-2 text-center md:text-left">
                 <div class="text-2xl font-bold text-white mb-4 md:mb-6">ABOUT<span class="text-amber-600">HISTORY</span>.ID</div>
-                <p class="mb-6 md:mb-6 max-w-sm mx-auto md:mx-0 text-sm md:text-base">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.</p>
+                <p class="mb-6 md:mb-6 max-w-sm mx-auto md:mx-0 text-sm md:text-base">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae sebagai konsekuensi.</p>
                 <div class="flex justify-center md:justify-start space-x-4 text-xl">
                     <a href="#" class="hover:text-white"><i class="fab fa-instagram"></i></a>
                     <a href="#" class="hover:text-white"><i class="fab fa-linkedin"></i></a>
@@ -250,7 +250,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Animasi Counter Angka
             const counters = document.querySelectorAll('.counter');
             const speed = 100;
 
@@ -267,11 +266,7 @@
                 }
             };
 
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.5
-            };
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.5 };
 
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
@@ -283,17 +278,13 @@
             }, observerOptions);
 
             const statsSection = document.getElementById('stats-section');
-            if (statsSection) {
-                observer.observe(statsSection);
-            }
+            if (statsSection) { observer.observe(statsSection); }
 
-            // Script Hamburger Menu Mobile
             const btn = document.getElementById('mobile-menu-button');
             const menu = document.getElementById('mobile-menu');
 
             btn.addEventListener('click', () => {
                 menu.classList.toggle('open');
-                // Ganti icon dari burger ke X
                 const icon = btn.querySelector('i');
                 if (menu.classList.contains('open')) {
                     icon.classList.remove('fa-bars');
@@ -305,6 +296,5 @@
             });
         });
     </script>
-
 </body>
 </html>
