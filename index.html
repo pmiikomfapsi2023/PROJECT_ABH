@@ -39,7 +39,7 @@
             width: max-content;
         }
 
-        /* PERBAIKAN: Hover pause hanya berlaku di perangkat dengan mouse (desktop), tidak nyangkut di HP */
+        /* Hover pause hanya berlaku di perangkat dengan mouse (desktop) */
         @media (hover: hover) {
             .animate-marquee:hover {
                 animation-play-state: paused;
@@ -219,34 +219,40 @@
             <div class="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-stone-50 to-transparent z-10 pointer-events-none"></div>
             <div class="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-stone-50 to-transparent z-10 pointer-events-none"></div>
             
-            <div class="animate-marquee gap-10 md:gap-16 px-4 items-center">
-                <img src="assets/img/Client1.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 1">
-                <img src="assets/img/Client2.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 2">
-                <img src="assets/img/Client3.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 3">
-                <img src="assets/img/Client4.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 4">
-                <img src="assets/img/Client5.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 5">
-                <img src="assets/img/Client6.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 6">
-                <img src="assets/img/Client7.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 7">
-                <img src="assets/img/Client8.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 8">
-                <img src="assets/img/Client9.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 9">
-                <img src="assets/img/Client10.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 10">
-                <img src="assets/img/Client11.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 11">
-                <img src="assets/img/Client12.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 12">
-                <img src="assets/img/Client13.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 13">
+            <div class="animate-marquee items-center">
                 
-                <img src="assets/img/Client1.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 1">
-                <img src="assets/img/Client2.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 2">
-                <img src="assets/img/Client3.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 3">
-                <img src="assets/img/Client4.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 4">
-                <img src="assets/img/Client5.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 5">
-                <img src="assets/img/Client6.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 6">
-                <img src="assets/img/Client7.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 7">
-                <img src="assets/img/Client8.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 8">
-                <img src="assets/img/Client9.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 9">
-                <img src="assets/img/Client10.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 10">
-                <img src="assets/img/Client11.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 11">
-                <img src="assets/img/Client12.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 12">
-                <img src="assets/img/Client13.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 13">
+                <div class="flex gap-10 md:gap-16 pr-10 md:pr-16 items-center">
+                    <img src="assets/img/Client1.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 1">
+                    <img src="assets/img/Client2.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 2">
+                    <img src="assets/img/Client3.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 3">
+                    <img src="assets/img/Client4.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 4">
+                    <img src="assets/img/Client5.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 5">
+                    <img src="assets/img/Client6.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 6">
+                    <img src="assets/img/Client7.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 7">
+                    <img src="assets/img/Client8.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 8">
+                    <img src="assets/img/Client9.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 9">
+                    <img src="assets/img/Client10.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 10">
+                    <img src="assets/img/Client11.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 11">
+                    <img src="assets/img/Client12.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 12">
+                    <img src="assets/img/Client13.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 13">
+                </div>
+                
+                <div class="flex gap-10 md:gap-16 pr-10 md:pr-16 items-center">
+                    <img src="assets/img/Client1.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 1">
+                    <img src="assets/img/Client2.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 2">
+                    <img src="assets/img/Client3.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 3">
+                    <img src="assets/img/Client4.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 4">
+                    <img src="assets/img/Client5.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 5">
+                    <img src="assets/img/Client6.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 6">
+                    <img src="assets/img/Client7.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 7">
+                    <img src="assets/img/Client8.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 8">
+                    <img src="assets/img/Client9.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 9">
+                    <img src="assets/img/Client10.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 10">
+                    <img src="assets/img/Client11.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 11">
+                    <img src="assets/img/Client12.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 12">
+                    <img src="assets/img/Client13.png" class="h-16 md:h-24 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Client 13">
+                </div>
+
             </div>
         </div>
     </section>
