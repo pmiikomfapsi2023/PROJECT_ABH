@@ -20,17 +20,36 @@
         body { font-family: 'Inter', sans-serif; }
         h1, h2, .font-serif { font-family: 'Playfair Display', serif; }
         
-        /* Animasi Slider Background */
+        /* --- PERBAIKAN: Parallax + Animasi Slider Background --- */
+        /* Supaya Parallax bisa jalan dengan animasi, kita buat kontainernya fixed di layar */
+        .parallax-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh; /* Pastikan tingginya menutupi layar penuh */
+            overflow: hidden;
+            clip: rect(0, auto, auto, 0); /* Trik lawas untuk parallax di elemen fixed */
+        }
+
+        .parallax-slider {
+            position: fixed; /* Ini yang bikin efek tertinggal saat di-scroll */
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 500%;
+            z-index: 0;
+            display: flex;
+            animation: slide 20s infinite cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateZ(0); /* Hardware acceleration */
+        }
+
         @keyframes slide {
             0%, 15%   { transform: translateX(0%); }
             25%, 40%  { transform: translateX(-20%); }
             50%, 65%  { transform: translateX(-40%); }
             75%, 90%  { transform: translateX(-60%); }
             100%      { transform: translateX(-80%); }
-        }
-        
-        .animate-slider {
-            animation: slide 20s infinite cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         /* Animasi Marquee Banner Klien */
@@ -51,7 +70,7 @@
             }
         }
 
-        /* --- TAMBAHAN BARU: Animasi Elegan (Fade In Up) --- */
+        /* Animasi Elegan (Fade In Up) */
         .reveal {
             opacity: 0;
             transform: translateY(40px);
@@ -61,7 +80,6 @@
             opacity: 1;
             transform: translateY(0);
         }
-        /* Delay untuk memunculkan elemen secara bergantian */
         .delay-100 { transition-delay: 100ms; }
         .delay-200 { transition-delay: 200ms; }
         .delay-300 { transition-delay: 300ms; }
@@ -154,17 +172,18 @@
         </div>
     </nav>
 
-    <header class="relative w-full h-[80vh] flex items-center justify-center text-center text-white px-4 overflow-hidden">
+    <header class="relative w-full h-[80vh] flex items-center justify-center text-center text-white px-4">
         
-        <div class="absolute top-0 left-0 h-full w-[500%] z-0 flex animate-slider">
-            <div class="w-1/5 h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1461360370896-922624d12aa1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
-            <div class="w-1/5 h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
-            <div class="w-1/5 h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
-            <div class="w-1/5 h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
-            <div class="w-1/5 h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1461360370896-922624d12aa1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
+        <div class="parallax-wrapper">
+            <div class="parallax-slider">
+                <div class="w-1/5 h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1461360370896-922624d12aa1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
+                <div class="w-1/5 h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
+                <div class="w-1/5 h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
+                <div class="w-1/5 h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
+                <div class="w-1/5 h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1461360370896-922624d12aa1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
+            </div>
+            <div class="absolute inset-0 z-10 bg-black/60 fixed h-full w-full"></div>
         </div>
-        
-        <div class="absolute inset-0 z-10 bg-black/60"></div>
         
         <div class="relative z-20 max-w-4xl mx-auto w-full px-4">
             <h1 class="mb-6 font-serif uppercase tracking-wide reveal">
@@ -184,7 +203,7 @@
         </div>
     </header>
 
-    <section id="stats-section" class="py-6 md:py-8 bg-amber-800 text-amber-50 relative z-30">
+    <section id="stats-section" class="py-6 md:py-8 bg-amber-800 text-amber-50 relative z-30 shadow-xl">
         <div class="max-w-6xl mx-auto px-2 md:px-8 grid grid-cols-3 gap-2 md:gap-8 text-center">
             <div>
                 <i class="fas fa-briefcase text-2xl md:text-3xl mb-2 opacity-80"></i>
@@ -204,7 +223,7 @@
         </div>
     </section>
 
-    <section id="about" class="py-16 md:py-24 max-w-6xl mx-auto px-6 md:px-8 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+    <section id="about" class="py-16 md:py-24 max-w-6xl mx-auto px-6 md:px-8 grid md:grid-cols-2 gap-10 md:gap-16 items-center relative z-30 bg-stone-50">
         <div class="order-2 md:order-1 reveal">
             <h2 class="text-3xl md:text-4xl mb-4 md:mb-6 font-serif text-stone-900">About Us</h2>
             <div class="w-16 h-1 bg-amber-600 mb-6 rounded-full"></div>
@@ -233,7 +252,7 @@
         </div>
     </section>
 
-    <section id="client-marquee" class="pt-10 pb-16 bg-stone-50 overflow-hidden border-t border-stone-200">
+    <section id="client-marquee" class="pt-10 pb-16 bg-stone-50 overflow-hidden border-t border-stone-200 relative z-30">
         <div class="max-w-6xl mx-auto px-6 md:px-8 mb-10 text-center reveal">
             <h2 class="text-2xl md:text-3xl font-serif text-stone-800">Our Client</h2>
             <div class="w-12 h-1 bg-amber-600 mx-auto mt-3 rounded-full"></div>
@@ -278,7 +297,7 @@
         </div>
     </section>
 
-    <section id="services" class="py-16 md:py-24 bg-stone-200 relative">
+    <section id="services" class="py-16 md:py-24 bg-stone-200 relative z-30">
         <div class="max-w-6xl mx-auto px-6 md:px-8 relative z-10">
             <div class="text-center mb-12 md:mb-16 reveal">
                 <h2 class="text-3xl md:text-4xl font-serif text-stone-900">Our Services</h2>
@@ -315,7 +334,7 @@
         </div>
     </section>
 
-    <footer id="contact" class="bg-stone-900 text-stone-400 py-16">
+    <footer id="contact" class="bg-stone-900 text-stone-400 py-16 relative z-30">
         <div class="max-w-6xl mx-auto px-6 md:px-8 grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-12">
             <div class="col-span-1 md:col-span-2 text-center md:text-left reveal">
                 <div class="text-2xl font-bold text-white mb-4 md:mb-6">ABOUT<span class="text-amber-600">HISTORY</span>.ID</div>
