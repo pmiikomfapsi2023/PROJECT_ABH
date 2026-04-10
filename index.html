@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,7 +33,7 @@
             animation: slide 20s infinite cubic-bezier(0.4, 0, 0.2, 1);
         }
         
-        /* Animasi Marquee Banner Klien (Scrolling ke kanan) */
+        /* Animasi Marquee Banner Klien */
         @keyframes scroll-right {
             0%   { transform: translateX(-50%); }
             100% { transform: translateX(0%); }
@@ -45,12 +45,26 @@
             width: max-content;
         }
 
-        /* Hover pause hanya berlaku di perangkat dengan mouse (desktop), tidak nyangkut di HP */
         @media (hover: hover) {
             .animate-marquee:hover {
                 animation-play-state: paused;
             }
         }
+
+        /* --- TAMBAHAN BARU: Animasi Elegan (Fade In Up) --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Delay untuk memunculkan elemen secara bergantian */
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
         
         /* Transisi Mobile Menu */
         #mobile-menu {
@@ -60,17 +74,17 @@
             overflow: hidden;
         }
         #mobile-menu.open {
-            max-height: 600px; /* PERBAIKAN: Diperbesar dari 400px menjadi 600px agar tidak kepotong */
+            max-height: 600px; 
             opacity: 1;
         }
     </style>
 </head>
 <body class="bg-stone-50 text-stone-800 overflow-x-hidden">
 
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <nav class="bg-white shadow-sm sticky top-0 z-50 transition-all duration-300">
         <div class="flex items-center justify-between px-6 md:px-8 py-3 relative z-20 bg-white">
             
-            <a href="#" class="flex-shrink-0">
+            <a href="#" class="flex-shrink-0 hover:opacity-80 transition duration-300">
                 <img src="assets/img/logo1.png" alt="Logo AboutHistory" class="h-12 md:h-16 w-auto">
             </a>
             
@@ -83,10 +97,10 @@
             </div>
             
             <div class="hidden md:block relative group">
-                <button class="bg-amber-800 text-white px-5 py-2 rounded-full hover:bg-amber-900 transition flex items-center gap-2">
+                <button class="bg-amber-800 text-white px-5 py-2 rounded-full hover:bg-amber-900 transition flex items-center gap-2 hover:-translate-y-0.5 hover:shadow-lg duration-300">
                     Contact <i class="fas fa-chevron-down text-xs"></i>
                 </button>
-                <div class="absolute right-0 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                <div class="absolute right-0 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform origin-top scale-95 group-hover:scale-100">
                     <div class="bg-white rounded-lg shadow-xl py-2 border border-stone-100 overflow-hidden">
                         <a href="#" target="_blank" class="flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-amber-50 hover:text-amber-800 transition">
                             <i class="fab fa-whatsapp w-6 text-green-600 text-lg"></i> Whatsapp
@@ -105,7 +119,7 @@
             </div>
 
             <div class="md:hidden flex items-center">
-                <button id="mobile-menu-button" class="text-stone-800 hover:text-amber-700 focus:outline-none">
+                <button id="mobile-menu-button" class="text-stone-800 hover:text-amber-700 focus:outline-none transition duration-300">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
@@ -113,26 +127,26 @@
 
         <div id="mobile-menu" class="md:hidden bg-white border-t border-stone-100 absolute w-full left-0 z-10 shadow-lg">
             <div class="px-6 py-4 flex flex-col space-y-4">
-                <a href="#" class="text-stone-800 hover:text-amber-700 font-medium">Dashboard</a>
-                <a href="#about" class="text-stone-800 hover:text-amber-700 font-medium">About Us</a>
-                <a href="#services" class="text-stone-800 hover:text-amber-700 font-medium">Services</a>
-                <a href="#gallery" class="text-stone-800 hover:text-amber-700 font-medium">Gallery</a>
-                <a href="#career" class="text-stone-800 hover:text-amber-700 font-medium">Career</a>
+                <a href="#" class="text-stone-800 hover:text-amber-700 font-medium transition pl-2 border-l-2 border-transparent hover:border-amber-700">Dashboard</a>
+                <a href="#about" class="text-stone-800 hover:text-amber-700 font-medium transition pl-2 border-l-2 border-transparent hover:border-amber-700">About Us</a>
+                <a href="#services" class="text-stone-800 hover:text-amber-700 font-medium transition pl-2 border-l-2 border-transparent hover:border-amber-700">Services</a>
+                <a href="#gallery" class="text-stone-800 hover:text-amber-700 font-medium transition pl-2 border-l-2 border-transparent hover:border-amber-700">Gallery</a>
+                <a href="#career" class="text-stone-800 hover:text-amber-700 font-medium transition pl-2 border-l-2 border-transparent hover:border-amber-700">Career</a>
                 
                 <hr class="border-stone-200">
                 
                 <div class="text-stone-500 text-sm font-semibold mb-1">Hubungi Kami:</div>
                 <div class="flex flex-col space-y-3">
-                    <a href="#" target="_blank" class="flex items-center text-stone-700 hover:text-amber-800">
+                    <a href="#" target="_blank" class="flex items-center text-stone-700 hover:text-amber-800 transition pl-2">
                         <i class="fab fa-whatsapp w-6 text-green-600 text-lg"></i> Whatsapp
                     </a>
-                    <a href="https://www.instagram.com/abouthistory.id" target="_blank" class="flex items-center text-stone-700 hover:text-amber-800">
+                    <a href="https://www.instagram.com/abouthistory.id" target="_blank" class="flex items-center text-stone-700 hover:text-amber-800 transition pl-2">
                         <i class="fab fa-instagram w-6 text-pink-600 text-lg"></i> Instagram
                     </a>
-                    <a href="https://www.tiktok.com/@abouthistory.id?_r=1&_t=ZS-95MjI40rLeb" target="_blank" class="flex items-center text-stone-700 hover:text-amber-800">
+                    <a href="https://www.tiktok.com/@abouthistory.id?_r=1&_t=ZS-95MjI40rLeb" target="_blank" class="flex items-center text-stone-700 hover:text-amber-800 transition pl-2">
                         <i class="fab fa-tiktok w-6 text-black text-lg"></i> Tiktok
                     </a>
-                    <a href="https://www.linkedin.com/company/abouthistory-id/" target="_blank" class="flex items-center text-stone-700 hover:text-amber-800">
+                    <a href="https://www.linkedin.com/company/abouthistory-id/" target="_blank" class="flex items-center text-stone-700 hover:text-amber-800 transition pl-2">
                         <i class="fab fa-linkedin w-6 text-blue-700 text-lg"></i> Linkedin
                     </a>
                 </div>
@@ -153,36 +167,36 @@
         <div class="absolute inset-0 z-10 bg-black/60"></div>
         
         <div class="relative z-20 max-w-4xl mx-auto w-full px-4">
-            <h1 class="mb-6 font-serif uppercase tracking-wide">
+            <h1 class="mb-6 font-serif uppercase tracking-wide reveal">
                 <div class="relative flex items-end justify-center gap-2 md:gap-5 mb-1 md:mb-2 leading-none">
-                    <span class="text-5xl sm:text-6xl md:text-[5.5rem] font-bold leading-none">JELAJAHI</span>
+                    <span class="text-5xl sm:text-6xl md:text-[5.5rem] font-bold leading-none hover:text-amber-200 transition duration-500 cursor-default">JELAJAHI</span>
                     <span class="text-xs sm:text-xl md:text-3xl font-bold tracking-[0.2em] md:tracking-widest pb-1.5 md:pb-3 leading-none opacity-90">MASA LALU</span>
                 </div>
                 <div class="relative flex items-end justify-center gap-2 md:gap-5 leading-none">
                     <span class="text-xs sm:text-xl md:text-3xl font-bold tracking-[0.2em] md:tracking-widest pb-1.5 md:pb-3 leading-none opacity-90">PAHAMI</span>
-                    <span class="text-5xl sm:text-6xl md:text-[5.5rem] font-bold leading-none">MASA KINI</span>
+                    <span class="text-5xl sm:text-6xl md:text-[5.5rem] font-bold leading-none hover:text-amber-200 transition duration-500 cursor-default">MASA KINI</span>
                 </div>
             </h1>
-            <p class="text-sm sm:text-base md:text-lg font-light mb-8 opacity-90 max-w-3xl mx-auto leading-relaxed">We are open to collaboration. Let's connect and create innovative solutions that drive growth, impact, and success together exploring new opportunities.</p>
-            <div class="flex justify-center">
-                <a href="#portfolio" class="bg-amber-600 hover:bg-amber-700 text-white px-8 md:px-10 py-3 rounded-md font-semibold transition shadow-lg inline-block text-sm md:text-base">Incididunt Ut</a>
+            <p class="text-sm sm:text-base md:text-lg font-light mb-8 opacity-90 max-w-3xl mx-auto leading-relaxed reveal delay-100">We are open to collaboration. Let's connect and create innovative solutions that drive growth, impact, and success together exploring new opportunities.</p>
+            <div class="flex justify-center reveal delay-200">
+                <a href="#services" class="bg-amber-600 hover:bg-amber-700 text-white px-8 md:px-10 py-3 rounded-md font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 inline-block text-sm md:text-base">Incididunt Ut</a>
             </div>
         </div>
     </header>
 
-    <section id="stats-section" class="py-6 md:py-8 bg-amber-800 text-amber-50">
+    <section id="stats-section" class="py-6 md:py-8 bg-amber-800 text-amber-50 relative z-30">
         <div class="max-w-6xl mx-auto px-2 md:px-8 grid grid-cols-3 gap-2 md:gap-8 text-center">
-            <div>
+            <div class="reveal delay-100">
                 <i class="fas fa-briefcase text-2xl md:text-3xl mb-2 opacity-80"></i>
                 <div class="text-xl sm:text-2xl md:text-4xl font-bold mb-1"><span class="counter" data-target="54">0</span>+</div>
                 <div class="text-[9px] sm:text-xs md:text-sm uppercase tracking-widest opacity-75 leading-tight">Project</div>
             </div>
-            <div>
+            <div class="reveal delay-200">
                 <i class="fab fa-instagram text-2xl md:text-3xl mb-2 opacity-80"></i>
                 <div class="text-xl sm:text-2xl md:text-4xl font-bold mb-1"><span class="counter" data-target="117">0</span>k</div>
                 <div class="text-[9px] sm:text-xs md:text-sm uppercase tracking-widest opacity-75 leading-tight">Followers Instagram</div>
             </div>
-            <div>
+            <div class="reveal delay-300">
                 <i class="fab fa-tiktok text-2xl md:text-3xl mb-2 opacity-80"></i>
                 <div class="text-xl sm:text-2xl md:text-4xl font-bold mb-1"><span class="counter" data-target="115">0</span>k</div>
                 <div class="text-[9px] sm:text-xs md:text-sm uppercase tracking-widest opacity-75 leading-tight">Followers Tiktok</div>
@@ -190,43 +204,45 @@
         </div>
     </section>
 
-    <section id="about" class="py-16 md:py-20 max-w-6xl mx-auto px-6 md:px-8 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-        <div class="order-2 md:order-1">
-            <h2 class="text-3xl md:text-4xl mb-4 md:mb-6 font-serif">About Us</h2>
-            <p class="text-stone-600 mb-6 leading-relaxed text-sm md:text-base">
+    <section id="about" class="py-16 md:py-24 max-w-6xl mx-auto px-6 md:px-8 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+        <div class="order-2 md:order-1 reveal">
+            <h2 class="text-3xl md:text-4xl mb-4 md:mb-6 font-serif text-stone-900">About Us</h2>
+            <div class="w-16 h-1 bg-amber-600 mb-6 rounded-full"></div> <p class="text-stone-600 mb-6 leading-relaxed text-sm md:text-base">
                 <strong>Lorem Ipsum</strong> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </p>
             <ul class="space-y-4 text-sm md:text-base">
-                <li class="flex items-start">
+                <li class="flex items-start hover:translate-x-1 transition duration-300">
                     <i class="fas fa-check-circle text-amber-700 mt-1 mr-3"></i>
                     <span>Duis aute irure dolor in reprehenderit in voluptate velit esse.</span>
                 </li>
-                <li class="flex items-start">
+                <li class="flex items-start hover:translate-x-1 transition duration-300">
                     <i class="fas fa-check-circle text-amber-700 mt-1 mr-3"></i>
                     <span>Cillum dolore eu fugiat nulla pariatur.</span>
                 </li>
-                <li class="flex items-start">
+                <li class="flex items-start hover:translate-x-1 transition duration-300">
                     <i class="fas fa-check-circle text-amber-700 mt-1 mr-3"></i>
                     <span>Excepteur sint occaecat cupidatat non proident, sunt in culpa.</span>
                 </li>
             </ul>
         </div>
-        <div class="order-1 md:order-2">
-            <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="History Book" class="rounded-lg shadow-2xl w-full">
+        <div class="order-1 md:order-2 reveal delay-200">
+            <div class="overflow-hidden rounded-xl shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="History Book" class="w-full h-auto hover:scale-105 transition-transform duration-700">
+            </div>
         </div>
     </section>
 
-    <section id="client-marquee" class="pt-6 pb-12 bg-stone-50 overflow-hidden border-t border-stone-200">
-        <div class="max-w-6xl mx-auto px-6 md:px-8 mb-8 text-center">
+    <section id="client-marquee" class="pt-10 pb-16 bg-stone-50 overflow-hidden border-t border-stone-200">
+        <div class="max-w-6xl mx-auto px-6 md:px-8 mb-10 text-center reveal">
             <h2 class="text-2xl md:text-3xl font-serif text-stone-800">Our Client</h2>
+            <div class="w-12 h-1 bg-amber-600 mx-auto mt-3 rounded-full"></div>
         </div>
         
-        <div class="relative w-full flex items-center">
+        <div class="relative w-full flex items-center reveal delay-100">
             <div class="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-stone-50 to-transparent z-10 pointer-events-none"></div>
             <div class="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-stone-50 to-transparent z-10 pointer-events-none"></div>
             
             <div class="animate-marquee items-center">
-                
                 <div class="flex flex-shrink-0 gap-10 md:gap-16 pr-10 md:pr-16 items-center">
                     <img src="assets/img/Client1.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 1">
                     <img src="assets/img/Client2.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 2">
@@ -242,7 +258,6 @@
                     <img src="assets/img/Client12.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 12">
                     <img src="assets/img/Client13.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 13">
                 </div>
-                
                 <div class="flex flex-shrink-0 gap-10 md:gap-16 pr-10 md:pr-16 items-center">
                     <img src="assets/img/Client1.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 1">
                     <img src="assets/img/Client2.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 2">
@@ -258,37 +273,37 @@
                     <img src="assets/img/Client12.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 12">
                     <img src="assets/img/Client13.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 13">
                 </div>
-
             </div>
         </div>
     </section>
 
-    <section id="services" class="py-16 md:py-20 bg-stone-200">
-        <div class="max-w-6xl mx-auto px-6 md:px-8">
-            <div class="text-center mb-10 md:mb-16">
-                <h2 class="text-3xl md:text-4xl font-serif text-stone-800">Our Services</h2>
+    <section id="services" class="py-16 md:py-24 bg-stone-200 relative">
+        <div class="max-w-6xl mx-auto px-6 md:px-8 relative z-10">
+            <div class="text-center mb-12 md:mb-16 reveal">
+                <h2 class="text-3xl md:text-4xl font-serif text-stone-900">Our Services</h2>
+                <div class="w-16 h-1 bg-amber-600 mx-auto mt-4 rounded-full"></div>
             </div>
             
-            <div class="grid md:grid-cols-2 gap-6 md:gap-10">
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12">
                 
-                <div class="bg-white p-6 md:p-8 rounded-xl shadow-sm hover:shadow-md transition flex flex-col sm:flex-row gap-5 md:gap-6 items-start">
-                    <div class="flex-shrink-0 w-12 h-12 bg-[#b91c1c] text-white rounded-lg flex items-center justify-center text-xl font-bold">
+                <div class="bg-white p-8 md:p-10 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 flex flex-col sm:flex-row gap-6 items-start reveal delay-100 group border border-transparent hover:border-amber-100">
+                    <div class="flex-shrink-0 w-14 h-14 bg-[#b91c1c] group-hover:bg-amber-700 transition duration-300 text-white rounded-xl flex items-center justify-center text-2xl font-bold shadow-md">
                         1
                     </div>
                     <div>
-                        <h3 class="text-lg md:text-xl font-bold mb-3 font-serif text-amber-900">Social Media Campaign</h3>
+                        <h3 class="text-xl md:text-2xl font-bold mb-3 font-serif text-amber-900 group-hover:text-amber-700 transition duration-300">Social Media Campaign</h3>
                         <p class="text-stone-600 text-sm md:text-base leading-relaxed">
                             Layanan ini berfokus pada perencanaan, pembuatan, dan pelaksanaan kampanye di media sosial untuk mencapai tujuan tertentu—baik itu meningkatkan brand awareness, engagement, penjualan, atau membangun komunitas.
                         </p>
                     </div>
                 </div>
 
-                <div class="bg-white p-6 md:p-8 rounded-xl shadow-sm hover:shadow-md transition flex flex-col sm:flex-row gap-5 md:gap-6 items-start">
-                    <div class="flex-shrink-0 w-12 h-12 bg-[#b91c1c] text-white rounded-lg flex items-center justify-center text-xl font-bold">
+                <div class="bg-white p-8 md:p-10 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 flex flex-col sm:flex-row gap-6 items-start reveal delay-200 group border border-transparent hover:border-amber-100">
+                    <div class="flex-shrink-0 w-14 h-14 bg-[#b91c1c] group-hover:bg-amber-700 transition duration-300 text-white rounded-xl flex items-center justify-center text-2xl font-bold shadow-md">
                         2
                     </div>
                     <div>
-                        <h3 class="text-lg md:text-xl font-bold mb-3 font-serif text-amber-900">Come & Share With Us</h3>
+                        <h3 class="text-xl md:text-2xl font-bold mb-3 font-serif text-amber-900 group-hover:text-amber-700 transition duration-300">Come & Share With Us</h3>
                         <p class="text-stone-600 text-sm md:text-base leading-relaxed">
                             Kami melakukan kunjungan langsung ke lokasi untuk mendokumentasikan dan mengulas tempat Anda secara komprehensif. Konten yang dihasilkan akan disesuaikan dengan identitas dan keunggulan lokasi, sekaligus mengaitkan dengan nilai sejarah, hukum, politik, atau HAM yang relevan.
                         </p>
@@ -299,40 +314,43 @@
         </div>
     </section>
 
-    <footer id="contact" class="bg-stone-900 text-stone-400 py-12 md:py-16">
+    <footer id="contact" class="bg-stone-900 text-stone-400 py-16">
         <div class="max-w-6xl mx-auto px-6 md:px-8 grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-12">
-            <div class="col-span-1 md:col-span-2 text-center md:text-left">
+            <div class="col-span-1 md:col-span-2 text-center md:text-left reveal">
                 <div class="text-2xl font-bold text-white mb-4 md:mb-6">ABOUT<span class="text-amber-600">HISTORY</span>.ID</div>
-                <p class="mb-6 md:mb-6 max-w-sm mx-auto md:mx-0 text-sm md:text-base">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae sebagai konsekuensi.</p>
-                <div class="flex justify-center md:justify-start space-x-4 text-xl">
-                    <a href="#" class="hover:text-white"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="hover:text-white"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="hover:text-white"><i class="fab fa-facebook"></i></a>
+                <p class="mb-6 md:mb-6 max-w-sm mx-auto md:mx-0 text-sm md:text-base leading-relaxed">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae sebagai konsekuensi.</p>
+                <div class="flex justify-center md:justify-start space-x-5 text-xl">
+                    <a href="#" class="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center hover:bg-amber-600 hover:text-white transition-colors duration-300"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center hover:bg-amber-600 hover:text-white transition-colors duration-300"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center hover:bg-amber-600 hover:text-white transition-colors duration-300"><i class="fab fa-facebook"></i></a>
                 </div>
             </div>
-            <div class="text-center md:text-left">
-                <h4 class="text-white font-bold mb-4 md:mb-6">Vel Illum</h4>
-                <ul class="space-y-2 md:space-y-3 text-sm md:text-base">
-                    <li><a href="#" class="hover:text-amber-500">Qui Dolorem</a></li>
-                    <li><a href="#" class="hover:text-amber-500">Eum Iure</a></li>
-                    <li><a href="#" class="hover:text-amber-500">Reprehenderit</a></li>
-                    <li><a href="#" class="hover:text-amber-500">Voluptate</a></li>
+            <div class="text-center md:text-left reveal delay-100">
+                <h4 class="text-white font-bold mb-4 md:mb-6 uppercase tracking-wider text-sm">Vel Illum</h4>
+                <ul class="space-y-3 text-sm md:text-base">
+                    <li><a href="#" class="hover:text-amber-500 transition-colors duration-300">Qui Dolorem</a></li>
+                    <li><a href="#" class="hover:text-amber-500 transition-colors duration-300">Eum Iure</a></li>
+                    <li><a href="#" class="hover:text-amber-500 transition-colors duration-300">Reprehenderit</a></li>
+                    <li><a href="#" class="hover:text-amber-500 transition-colors duration-300">Voluptate</a></li>
                 </ul>
             </div>
-            <div class="text-center md:text-left">
-                <h4 class="text-white font-bold mb-4 md:mb-6">Nihil Molestiae</h4>
+            <div class="text-center md:text-left reveal delay-200">
+                <h4 class="text-white font-bold mb-4 md:mb-6 uppercase tracking-wider text-sm">Nihil Molestiae</h4>
                 <p class="text-sm">Email: lorem@ipsum.com</p>
                 <p class="text-sm mt-2">WhatsApp: +00 123-456-7890</p>
-                <p class="text-sm mt-2 text-stone-500 italic">Consequatur, Velit</p>
+                <p class="text-sm mt-3 text-stone-500 italic border-l-2 border-amber-800 pl-3">Consequatur, Velit</p>
             </div>
         </div>
-        <div class="text-center mt-12 md:mt-16 pt-6 md:pt-8 border-t border-stone-800 text-[10px] md:text-xs uppercase tracking-widest">
-            &copy; 2026 Lorem Ipsum Dolor. Sit Amet Consectetur.
+        <div class="max-w-6xl mx-auto px-6 md:px-8 mt-16 pt-8 border-t border-stone-800 flex flex-col md:flex-row items-center justify-between reveal delay-300">
+            <div class="text-[10px] md:text-xs uppercase tracking-widest text-center md:text-left w-full">
+                &copy; 2026 Lorem Ipsum Dolor. Sit Amet Consectetur.
+            </div>
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Script Animasi Counter (Angka)
             const counters = document.querySelectorAll('.counter');
             const speed = 100;
 
@@ -349,9 +367,10 @@
                 }
             };
 
-            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.5 };
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
 
-            const observer = new IntersectionObserver((entries, observer) => {
+            // Observer khusus untuk Counter Angka
+            const counterObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         counters.forEach(counter => animateCounter(counter));
@@ -361,8 +380,22 @@
             }, observerOptions);
 
             const statsSection = document.getElementById('stats-section');
-            if (statsSection) { observer.observe(statsSection); }
+            if (statsSection) { counterObserver.observe(statsSection); }
 
+            // TAMBAHAN BARU: Observer khusus untuk Elemen Fade In (Reveal)
+            const revealElements = document.querySelectorAll('.reveal');
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target); // Hanya animasi 1x saat pertama kali di scroll
+                    }
+                });
+            }, { root: null, rootMargin: '0px', threshold: 0.1 });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+
+            // Script Hamburger Menu
             const btn = document.getElementById('mobile-menu-button');
             const menu = document.getElementById('mobile-menu');
 
@@ -376,6 +409,17 @@
                     icon.classList.remove('fa-times');
                     icon.classList.add('fa-bars');
                 }
+            });
+            
+            // Script untuk menutup menu mobile otomatis saat link diklik
+            const mobileLinks = menu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.remove('open');
+                    const icon = btn.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                });
             });
         });
     </script>
