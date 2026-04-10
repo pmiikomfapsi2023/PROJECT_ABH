@@ -39,8 +39,11 @@
             width: max-content;
         }
 
-        .animate-marquee:hover {
-            animation-play-state: paused;
+        /* PERBAIKAN: Hover pause hanya berlaku di perangkat dengan mouse (desktop), tidak nyangkut di HP */
+        @media (hover: hover) {
+            .animate-marquee:hover {
+                animation-play-state: paused;
+            }
         }
         
         /* Transisi Mobile Menu */
