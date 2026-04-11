@@ -26,7 +26,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 100vh; 
+            height: 100dvh; /* PERBAIKAN: Pakai 100dvh agar sempurna di mobile browser */
             overflow: hidden;
             clip: rect(0, auto, auto, 0); 
         }
@@ -35,7 +35,7 @@
             position: fixed; 
             top: 0;
             left: 0;
-            height: 100vh;
+            height: 100dvh; /* PERBAIKAN: Pakai 100dvh */
             width: 500%;
             z-index: 0;
             display: flex;
@@ -238,7 +238,7 @@
         </nav>
     </div>
 
-    <header class="relative w-full h-screen flex items-center justify-center text-center text-white px-4">
+    <header class="relative w-full h-[100dvh] flex items-center justify-center text-center text-white px-4">
         
         <div class="parallax-wrapper">
             <div class="parallax-slider">
@@ -252,31 +252,31 @@
         </div>
         
         <div class="relative z-20 max-w-4xl mx-auto w-full px-4 pt-16">
-            <h1 class="mb-6 font-serif uppercase tracking-wide reveal drop-shadow-2xl">
+            <h1 class="mb-5 md:mb-6 font-serif uppercase tracking-wide reveal drop-shadow-2xl">
                 <div class="relative flex items-end justify-center gap-2 md:gap-5 mb-1 md:mb-2 leading-none">
-                    <span class="text-5xl sm:text-6xl md:text-[5.5rem] font-bold leading-none hover:text-amber-200 transition duration-500 cursor-default">JELAJAHI</span>
-                    <span class="text-xs sm:text-xl md:text-3xl font-bold tracking-[0.2em] md:tracking-widest pb-1.5 md:pb-3 leading-none opacity-90">MASA LALU</span>
+                    <span class="text-4xl sm:text-5xl md:text-[5.5rem] font-bold leading-none hover:text-amber-200 transition duration-500 cursor-default">JELAJAHI</span>
+                    <span class="text-[10px] sm:text-sm md:text-3xl font-bold tracking-[0.2em] md:tracking-widest pb-0.5 md:pb-3 leading-none opacity-90">MASA LALU</span>
                 </div>
                 <div class="relative flex items-end justify-center gap-2 md:gap-5 leading-none">
-                    <span class="text-xs sm:text-xl md:text-3xl font-bold tracking-[0.2em] md:tracking-widest pb-1.5 md:pb-3 leading-none opacity-90">PAHAMI</span>
-                    <span class="text-5xl sm:text-6xl md:text-[5.5rem] font-bold leading-none hover:text-amber-200 transition duration-500 cursor-default">MASA KINI</span>
+                    <span class="text-[10px] sm:text-sm md:text-3xl font-bold tracking-[0.2em] md:tracking-widest pb-0.5 md:pb-3 leading-none opacity-90">PAHAMI</span>
+                    <span class="text-4xl sm:text-5xl md:text-[5.5rem] font-bold leading-none hover:text-amber-200 transition duration-500 cursor-default">MASA KINI</span>
                 </div>
             </h1>
             
-            <p class="text-sm sm:text-base md:text-lg font-light mb-10 opacity-90 max-w-3xl mx-auto leading-relaxed reveal delay-100 drop-shadow-md">
+            <p class="text-sm sm:text-base md:text-lg font-light mb-8 md:mb-10 opacity-90 max-w-3xl mx-auto leading-relaxed reveal delay-100 drop-shadow-md px-2">
                 Platform edukasi sejarah modern yang mengajak Anda melihat peristiwa masa lalu melalui kacamata yang kritis, mendalam, dan relevan dengan kehidupan saat ini.
             </p>
             
             <div class="flex justify-center reveal delay-200">
-                <a href="#about" class="magnetic-btn bg-[#d97706] hover:bg-[#b45309] text-white px-10 py-3.5 rounded-full font-semibold shadow-lg hover:shadow-2xl inline-block text-sm md:text-base tracking-wide">
+                <a href="#about" class="magnetic-btn bg-[#d97706] hover:bg-[#b45309] text-white px-8 md:px-10 py-3 md:py-3.5 rounded-full font-semibold shadow-lg hover:shadow-2xl inline-block text-sm md:text-base tracking-wide">
                     Mulai Menjelajah
                 </a>
             </div>
         </div>
     </header>
 
-    <section id="stats-section" class="py-6 md:py-8 bg-[#b45309] text-[#fffbeb] relative z-30 shadow-xl">
-        <div class="max-w-6xl mx-auto px-4 md:px-8 grid grid-cols-3 gap-4 md:gap-6 text-center">
+    <section id="stats-section" class="py-8 md:py-10 bg-[#b45309] text-[#fffbeb] relative z-30 shadow-xl">
+        <div class="max-w-6xl mx-auto px-2 md:px-8 grid grid-cols-3 gap-2 md:gap-6 text-center">
             <div>
                 <i class="fas fa-briefcase text-xl md:text-2xl mb-2 opacity-90"></i>
                 <div class="text-xl sm:text-2xl md:text-4xl font-bold mb-1 font-serif"><span class="counter" data-target="54">0</span>+</div>
@@ -295,14 +295,14 @@
         </div>
     </section>
 
-    <section id="about" class="py-16 md:py-24 max-w-6xl mx-auto px-6 md:px-8 grid md:grid-cols-2 gap-10 md:gap-16 items-center relative z-30 bg-stone-50">
+    <section id="about" class="py-16 md:py-24 max-w-6xl mx-auto px-6 md:px-8 grid md:grid-cols-2 gap-10 md:gap-16 items-center relative z-30 bg-stone-50 text-center md:text-left">
         <div class="order-2 md:order-1 reveal">
             <h2 class="text-3xl md:text-4xl mb-4 md:mb-6 font-serif text-stone-900">About Us</h2>
-            <div class="w-16 h-1 bg-[#d97706] mb-6 rounded-full"></div>
+            <div class="w-16 h-1 bg-[#d97706] mb-6 rounded-full mx-auto md:mx-0"></div>
             <p class="text-stone-600 mb-6 leading-relaxed text-sm md:text-base">
                 <strong>AboutHistory.id</strong> adalah platform yang berdedikasi untuk demokratisasi pengetahuan sejarah. Kami percaya bahwa memahami masa lalu adalah kunci untuk navigasi masa depan yang lebih baik.
             </p>
-            <ul class="space-y-4 text-sm md:text-base text-stone-700">
+            <ul class="space-y-4 text-sm md:text-base text-stone-700 text-left inline-block">
                 <li class="flex items-start hover:translate-x-1 transition duration-300">
                     <i class="fas fa-check-circle text-[#d97706] mt-1 mr-3"></i>
                     <span>Analisis mendalam peristiwa sejarah dari berbagai perspektif.</span>
@@ -320,7 +320,7 @@
         <div class="order-1 md:order-2 reveal delay-200">
             <div class="overflow-hidden rounded-xl shadow-2xl relative">
                 <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Library" class="w-full h-auto hover:scale-105 transition-transform duration-700">
-                <div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-6 py-4 rounded-lg shadow-lg border-l-4 border-[#d97706] max-w-xs hidden md:block">
+                <div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-6 py-4 rounded-lg shadow-lg border-l-4 border-[#d97706] max-w-xs hidden md:block text-left">
                     <p class="font-serif italic text-stone-800 font-semibold mb-1">"History is a guide to navigation in perilous times."</p>
                     <p class="text-xs text-stone-500 uppercase tracking-wider">— David McCullough</p>
                 </div>
@@ -376,27 +376,27 @@
 
     <section id="services" class="py-16 md:py-24 bg-white relative z-30">
         <div class="max-w-6xl mx-auto px-6 md:px-8 relative z-10">
-            <div class="text-center mb-16 md:mb-20 reveal">
+            <div class="text-center mb-12 md:mb-20 reveal">
                 <p class="text-xs font-semibold tracking-[0.3em] uppercase text-stone-400 mb-3">Layanan Kami</p>
                 <h2 class="text-3xl md:text-5xl font-serif text-stone-900 leading-tight">Solusi Kreatif Berbasis <span class="italic text-[#d97706]">Sejarah</span></h2>
             </div>
             
             <div class="grid md:grid-cols-2 gap-8 md:gap-12">
-                <div class="p-4 rounded-2xl transition-all duration-500 group reveal delay-100 flex flex-col items-start hover:-translate-y-1">
-                    <div class="w-14 h-14 bg-stone-900 text-white rounded-2xl flex items-center justify-center text-xl mb-6 shadow-lg group-hover:bg-[#d97706] transition duration-300">
+                <div class="p-4 rounded-2xl transition-all duration-500 group reveal delay-100 flex flex-col items-center md:items-start text-center md:text-left hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-stone-900 text-white rounded-2xl flex items-center justify-center text-xl mb-5 md:mb-6 shadow-lg group-hover:bg-[#d97706] transition duration-300">
                         <i class="fas fa-bullhorn"></i>
                     </div>
-                    <h3 class="text-xl md:text-2xl font-bold mb-4 font-serif text-stone-900">Social Media Campaign</h3>
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 font-serif text-stone-900">Social Media Campaign</h3>
                     <p class="text-stone-600 text-sm md:text-base leading-relaxed">
                         Layanan ini berfokus pada perencanaan, pembuatan, dan pelaksanaan kampanye di media sosial untuk mencapai tujuan tertentu—baik itu meningkatkan brand awareness, engagement, penjualan, atau membangun komunitas.
                     </p>
                 </div>
 
-                <div class="p-4 rounded-2xl transition-all duration-500 group reveal delay-200 flex flex-col items-start hover:-translate-y-1">
-                    <div class="w-14 h-14 bg-stone-900 text-white rounded-2xl flex items-center justify-center text-xl mb-6 shadow-lg group-hover:bg-[#d97706] transition duration-300">
+                <div class="p-4 rounded-2xl transition-all duration-500 group reveal delay-200 flex flex-col items-center md:items-start text-center md:text-left hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-stone-900 text-white rounded-2xl flex items-center justify-center text-xl mb-5 md:mb-6 shadow-lg group-hover:bg-[#d97706] transition duration-300">
                         <i class="fas fa-share-nodes"></i>
                     </div>
-                    <h3 class="text-xl md:text-2xl font-bold mb-4 font-serif text-stone-900">Come & Share With Us</h3>
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 font-serif text-stone-900">Come & Share With Us</h3>
                     <p class="text-stone-600 text-sm md:text-base leading-relaxed">
                         Kami melakukan kunjungan langsung ke lokasi untuk mendokumentasikan dan mengulas tempat Anda secara komprehensif. Konten yang dihasilkan akan disesuaikan dengan identitas dan keunggulan lokasi, sekaligus mengaitkan dengan nilai sejarah, hukum, politik, atau HAM yang relevan.
                     </p>
@@ -407,7 +407,7 @@
 
     <section id="gallery" class="py-16 md:py-24 bg-stone-50 relative z-30">
         <div class="max-w-6xl mx-auto px-6 md:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12 reveal">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-end text-center md:text-left mb-10 md:mb-12 reveal">
                 <div>
                     <p class="text-xs font-semibold tracking-[0.3em] uppercase text-stone-400 mb-2">Dokumentasi</p>
                     <h2 class="text-3xl md:text-4xl font-serif text-stone-900">Galeri <span class="italic text-[#d97706]">Visual</span></h2>
@@ -421,7 +421,7 @@
                 <div class="gallery-item md:col-span-2 h-64 md:h-80 bg-stone-200 reveal delay-100 group cursor-pointer">
                     <img src="https://images.unsplash.com/photo-1461360370896-922624d12aa1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Gallery 1" class="w-full h-full object-cover">
                     <div class="gallery-overlay">
-                        <div class="text-white transform translate-y-4 group-hover:translate-y-0 transition duration-300">
+                        <div class="text-white transform translate-y-4 group-hover:translate-y-0 transition duration-300 text-left">
                             <p class="text-xs font-bold uppercase tracking-widest text-[#d97706] mb-1">Eksplorasi</p>
                             <h3 class="text-xl font-serif">Kunjungan Museum Nasional</h3>
                         </div>
@@ -430,7 +430,7 @@
                 <div class="gallery-item h-64 md:h-80 bg-stone-200 reveal delay-200 group cursor-pointer">
                     <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Gallery 2" class="w-full h-full object-cover">
                     <div class="gallery-overlay">
-                        <div class="text-white transform translate-y-4 group-hover:translate-y-0 transition duration-300">
+                        <div class="text-white transform translate-y-4 group-hover:translate-y-0 transition duration-300 text-left">
                             <p class="text-xs font-bold uppercase tracking-widest text-[#d97706] mb-1">Riset</p>
                             <h3 class="text-xl font-serif">Arsip Sejarah</h3>
                         </div>
@@ -439,7 +439,7 @@
                 <div class="gallery-item h-64 md:h-80 bg-stone-200 reveal delay-100 group cursor-pointer">
                     <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Gallery 3" class="w-full h-full object-cover">
                     <div class="gallery-overlay">
-                        <div class="text-white transform translate-y-4 group-hover:translate-y-0 transition duration-300">
+                        <div class="text-white transform translate-y-4 group-hover:translate-y-0 transition duration-300 text-left">
                             <p class="text-xs font-bold uppercase tracking-widest text-[#d97706] mb-1">Diskusi</p>
                             <h3 class="text-xl font-serif">Seminar Pemuda</h3>
                         </div>
@@ -448,7 +448,7 @@
                 <div class="gallery-item md:col-span-2 h-64 md:h-80 bg-stone-200 reveal delay-200 group cursor-pointer">
                     <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Gallery 4" class="w-full h-full object-cover">
                     <div class="gallery-overlay">
-                        <div class="text-white transform translate-y-4 group-hover:translate-y-0 transition duration-300">
+                        <div class="text-white transform translate-y-4 group-hover:translate-y-0 transition duration-300 text-left">
                             <p class="text-xs font-bold uppercase tracking-widest text-[#d97706] mb-1">Dokumentasi</p>
                             <h3 class="text-xl font-serif">Peninggalan Kolonial</h3>
                         </div>
@@ -458,19 +458,19 @@
         </div>
     </section>
 
-    <section id="career" class="py-20 md:py-32 bg-[#161413] relative z-30 overflow-hidden">
+    <section id="career" class="py-16 md:py-32 bg-[#161413] relative z-30 overflow-hidden">
         <div class="absolute top-0 right-0 w-96 h-96 bg-[#d97706] opacity-10 rounded-full blur-[100px]"></div>
         <div class="absolute bottom-0 left-0 w-64 h-64 bg-amber-900 opacity-20 rounded-full blur-[80px]"></div>
 
         <div class="max-w-6xl mx-auto px-6 md:px-8 relative z-10 grid md:grid-cols-2 gap-12 lg:gap-20 items-start">
             
-            <div class="reveal">
+            <div class="reveal text-center md:text-left">
                 <p class="text-xs font-bold tracking-[0.2em] uppercase text-[#d97706] mb-4">BERGABUNGLAH</p>
                 <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif text-white mb-6 leading-tight">
                     Jadilah Bagian dari <br/>
                     <span class="italic text-[#d97706]">Masa Depan</span> Sejarah
                 </h2>
-                <p class="text-stone-400 text-sm md:text-base leading-relaxed mb-8 max-w-md">
+                <p class="text-stone-400 text-sm md:text-base leading-relaxed mb-8 max-w-md mx-auto md:mx-0">
                     Kami mencari individu yang memiliki gairah tinggi terhadap sejarah dan ingin berkontribusi dalam mengedukasi masyarakat melalui cara-cara yang inovatif.
                 </p>
                 <div class="inline-flex items-center gap-2 bg-[#23201e] border border-stone-700 text-[#d97706] px-5 py-2.5 rounded-full text-sm font-semibold shadow-sm">
@@ -483,23 +483,11 @@
                 <a href="#" class="group block bg-[#1c1a19] border border-stone-800 hover:border-stone-600 p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1">
                     <div class="flex justify-between items-center gap-4">
                         <div>
-                            <h4 class="text-xl font-bold text-white mb-2 group-hover:text-[#d97706] transition-colors">Historical Content Creator</h4>
-                            <p class="text-xs text-stone-500 font-medium tracking-widest uppercase">FULL-TIME &bull; REMOTE / JAKARTA</p>
+                            <h4 class="text-lg md:text-xl font-bold text-white mb-2 group-hover:text-[#d97706] transition-colors">Historical Content Creator</h4>
+                            <p class="text-[10px] md:text-xs text-stone-500 font-medium tracking-widest uppercase">FULL-TIME &bull; REMOTE</p>
                         </div>
-                        <div class="w-12 h-12 rounded-full bg-stone-800 text-stone-300 flex items-center justify-center group-hover:bg-[#d97706] group-hover:text-white transition-colors flex-shrink-0">
-                            <i class="fas fa-arrow-right transform -rotate-45"></i>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="#" class="group block bg-[#1c1a19] border border-stone-800 hover:border-stone-600 p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1">
-                    <div class="flex justify-between items-center gap-4">
-                        <div>
-                            <h4 class="text-xl font-bold text-white mb-2 group-hover:text-[#d97706] transition-colors">Research Associate</h4>
-                            <p class="text-xs text-stone-500 font-medium tracking-widest uppercase">CONTRACT &bull; JAKARTA</p>
-                        </div>
-                        <div class="w-12 h-12 rounded-full bg-stone-800 text-stone-300 flex items-center justify-center group-hover:bg-[#d97706] group-hover:text-white transition-colors flex-shrink-0">
-                            <i class="fas fa-arrow-right transform -rotate-45"></i>
+                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-stone-800 text-stone-300 flex items-center justify-center group-hover:bg-[#d97706] group-hover:text-white transition-colors flex-shrink-0">
+                            <i class="fas fa-arrow-right transform -rotate-45 text-sm md:text-base"></i>
                         </div>
                     </div>
                 </a>
@@ -507,11 +495,11 @@
                 <a href="#" class="group block bg-[#1c1a19] border border-stone-800 hover:border-stone-600 p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1">
                     <div class="flex justify-between items-center gap-4">
                         <div>
-                            <h4 class="text-xl font-bold text-white mb-2 group-hover:text-[#d97706] transition-colors">Social Media Strategist</h4>
-                            <p class="text-xs text-stone-500 font-medium tracking-widest uppercase">FULL-TIME &bull; REMOTE</p>
+                            <h4 class="text-lg md:text-xl font-bold text-white mb-2 group-hover:text-[#d97706] transition-colors">Research Associate</h4>
+                            <p class="text-[10px] md:text-xs text-stone-500 font-medium tracking-widest uppercase">CONTRACT &bull; JAKARTA</p>
                         </div>
-                        <div class="w-12 h-12 rounded-full bg-stone-800 text-stone-300 flex items-center justify-center group-hover:bg-[#d97706] group-hover:text-white transition-colors flex-shrink-0">
-                            <i class="fas fa-arrow-right transform -rotate-45"></i>
+                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-stone-800 text-stone-300 flex items-center justify-center group-hover:bg-[#d97706] group-hover:text-white transition-colors flex-shrink-0">
+                            <i class="fas fa-arrow-right transform -rotate-45 text-sm md:text-base"></i>
                         </div>
                     </div>
                 </a>
@@ -519,11 +507,23 @@
                 <a href="#" class="group block bg-[#1c1a19] border border-stone-800 hover:border-stone-600 p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1">
                     <div class="flex justify-between items-center gap-4">
                         <div>
-                            <h4 class="text-xl font-bold text-white mb-2 group-hover:text-[#d97706] transition-colors">Community Manager</h4>
-                            <p class="text-xs text-stone-500 font-medium tracking-widest uppercase">PART-TIME &bull; JAKARTA</p>
+                            <h4 class="text-lg md:text-xl font-bold text-white mb-2 group-hover:text-[#d97706] transition-colors">Social Media Strategist</h4>
+                            <p class="text-[10px] md:text-xs text-stone-500 font-medium tracking-widest uppercase">FULL-TIME &bull; REMOTE</p>
                         </div>
-                        <div class="w-12 h-12 rounded-full bg-stone-800 text-stone-300 flex items-center justify-center group-hover:bg-[#d97706] group-hover:text-white transition-colors flex-shrink-0">
-                            <i class="fas fa-arrow-right transform -rotate-45"></i>
+                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-stone-800 text-stone-300 flex items-center justify-center group-hover:bg-[#d97706] group-hover:text-white transition-colors flex-shrink-0">
+                            <i class="fas fa-arrow-right transform -rotate-45 text-sm md:text-base"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="group block bg-[#1c1a19] border border-stone-800 hover:border-stone-600 p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="flex justify-between items-center gap-4">
+                        <div>
+                            <h4 class="text-lg md:text-xl font-bold text-white mb-2 group-hover:text-[#d97706] transition-colors">Community Manager</h4>
+                            <p class="text-[10px] md:text-xs text-stone-500 font-medium tracking-widest uppercase">PART-TIME &bull; JAKARTA</p>
+                        </div>
+                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-stone-800 text-stone-300 flex items-center justify-center group-hover:bg-[#d97706] group-hover:text-white transition-colors flex-shrink-0">
+                            <i class="fas fa-arrow-right transform -rotate-45 text-sm md:text-base"></i>
                         </div>
                     </div>
                 </a>
@@ -532,13 +532,13 @@
         </div>
     </section>
 
-    <footer id="contact" class="bg-[#111111] text-stone-400 py-16 relative z-30">
-        <div class="max-w-6xl mx-auto px-6 md:px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
+    <footer id="contact" class="bg-[#111111] text-stone-400 py-12 md:py-16 relative z-30">
+        <div class="max-w-6xl mx-auto px-6 md:px-8 grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-12">
             
             <div class="col-span-1 md:col-span-2 text-center md:text-left reveal">
                 <div class="flex items-center justify-center md:justify-start gap-3 mb-6">
-                    <div class="w-12 h-12 bg-[#d97706] rounded-full flex items-center justify-center text-white font-serif font-bold text-xl">AH</div>
-                    <div class="text-2xl font-bold text-white tracking-wide">ABOUTHISTORY.ID</div>
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-[#d97706] rounded-full flex items-center justify-center text-white font-serif font-bold text-lg md:text-xl">AH</div>
+                    <div class="text-xl md:text-2xl font-bold text-white tracking-wide">ABOUTHISTORY.ID</div>
                 </div>
                 <p class="mb-8 max-w-sm mx-auto md:mx-0 text-sm md:text-base leading-relaxed text-stone-400">
                     Platform edukasi sejarah modern yang mengajak Anda melihat peristiwa masa lalu melalui kacamata yang kritis, mendalam, dan relevan.
@@ -551,8 +551,8 @@
             </div>
 
             <div class="text-center md:text-left reveal delay-100">
-                <h4 class="text-white font-bold mb-6 tracking-widest text-sm uppercase">Navigasi</h4>
-                <ul class="space-y-3 text-sm md:text-base">
+                <h4 class="text-white font-bold mb-5 md:mb-6 tracking-widest text-sm uppercase">Navigasi</h4>
+                <ul class="space-y-3 text-sm md:text-base inline-block text-left">
                     <li><a href="#" class="hover:text-white transition-colors duration-300">Dashboard</a></li>
                     <li><a href="#about" class="hover:text-white transition-colors duration-300">About Us</a></li>
                     <li><a href="#services" class="hover:text-white transition-colors duration-300">Services</a></li>
@@ -562,16 +562,16 @@
             </div>
 
             <div class="text-center md:text-left reveal delay-200">
-                <h4 class="text-white font-bold mb-6 tracking-widest text-sm uppercase">Kontak</h4>
-                <ul class="space-y-4 text-sm">
-                    <li class="flex items-center justify-center md:justify-start gap-3">
-                        <i class="far fa-envelope text-[#d97706]"></i> halo@abouthistory.id
+                <h4 class="text-white font-bold mb-5 md:mb-6 tracking-widest text-sm uppercase">Kontak</h4>
+                <ul class="space-y-4 text-sm inline-block text-left">
+                    <li class="flex items-center justify-start gap-3">
+                        <i class="far fa-envelope text-[#d97706] w-5 text-center"></i> halo@abouthistory.id
                     </li>
-                    <li class="flex items-center justify-center md:justify-start gap-3">
-                        <i class="fas fa-phone text-[#d97706]"></i> +62 812 3456 7890
+                    <li class="flex items-center justify-start gap-3">
+                        <i class="fas fa-phone text-[#d97706] w-5 text-center"></i> +62 812 3456 7890
                     </li>
-                    <li class="flex items-start justify-center md:justify-start gap-3">
-                        <i class="fas fa-map-marker-alt text-[#d97706] mt-1"></i> 
+                    <li class="flex items-start justify-start gap-3">
+                        <i class="fas fa-map-marker-alt text-[#d97706] w-5 text-center mt-1"></i> 
                         <span>Tangerang Selatan,<br>Indonesia</span>
                     </li>
                 </ul>
@@ -579,12 +579,12 @@
 
         </div>
         
-        <div class="max-w-6xl mx-auto px-6 md:px-8 mt-16 pt-8 border-t border-stone-800 flex flex-col md:flex-row items-center justify-between reveal delay-300">
-            <div class="text-[10px] md:text-xs tracking-wider text-stone-500 mb-4 md:mb-0">
+        <div class="max-w-6xl mx-auto px-6 md:px-8 mt-12 md:mt-16 pt-8 border-t border-stone-800 flex flex-col md:flex-row items-center justify-between reveal delay-300 gap-4">
+            <div class="text-[10px] md:text-xs tracking-wider text-stone-500 text-center md:text-left">
                 &copy; 2026 ABOUTHISTORY.ID. ALL RIGHTS RESERVED.
             </div>
-            <div class="text-[10px] md:text-xs tracking-wider text-stone-500 flex items-center gap-2">
-                CRAFTED WITH PASSION <span class="w-8 h-[1px] bg-stone-700 block"></span> TANGERANG SELATAN
+            <div class="text-[10px] md:text-xs tracking-wider text-stone-500 flex items-center justify-center gap-2">
+                CRAFTED WITH PASSION <span class="w-6 md:w-8 h-[1px] bg-stone-700 block"></span> TANGERANG SELATAN
             </div>
         </div>
     </footer>
@@ -635,9 +635,9 @@
 
             revealElements.forEach(el => revealObserver.observe(el));
 
-            // Script untuk Magnetic Button
+            // Script untuk Magnetic Button (hanya berjalan di device dengan pointer/mouse)
             const magneticBtn = document.querySelector('.magnetic-btn');
-            if (magneticBtn) {
+            if (magneticBtn && window.matchMedia("(pointer: fine)").matches) {
                 magneticBtn.addEventListener('mousemove', (e) => {
                     const rect = magneticBtn.getBoundingClientRect();
                     const x = e.clientX - rect.left - rect.width / 2;
