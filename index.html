@@ -20,20 +20,19 @@
         body { font-family: 'Inter', sans-serif; }
         h1, h2, .font-serif { font-family: 'Playfair Display', serif; }
         
-        /* --- PERBAIKAN: Parallax + Animasi Slider Background --- */
-        /* Supaya Parallax bisa jalan dengan animasi, kita buat kontainernya fixed di layar */
+        /* --- Parallax + Animasi Slider Background --- */
         .parallax-wrapper {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100vh; /* Pastikan tingginya menutupi layar penuh */
+            height: 100vh; 
             overflow: hidden;
-            clip: rect(0, auto, auto, 0); /* Trik lawas untuk parallax di elemen fixed */
+            clip: rect(0, auto, auto, 0); 
         }
 
         .parallax-slider {
-            position: fixed; /* Ini yang bikin efek tertinggal saat di-scroll */
+            position: fixed; 
             top: 0;
             left: 0;
             height: 100vh;
@@ -41,7 +40,7 @@
             z-index: 0;
             display: flex;
             animation: slide 20s infinite cubic-bezier(0.4, 0, 0.2, 1);
-            transform: translateZ(0); /* Hardware acceleration */
+            transform: translateZ(0); 
         }
 
         @keyframes slide {
@@ -458,7 +457,7 @@
             
             <div class="reveal">
                 <p class="text-xs font-bold tracking-[0.2em] uppercase text-[#d97706] mb-4">BERGABUNGLAH</p>
-                <h2 class="text-4xl lg:text-6xl font-serif text-white mb-6 leading-tight">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif text-white mb-6 leading-tight">
                     Jadilah Bagian dari <br/>
                     <span class="italic text-[#d97706]">Masa Depan</span> Sejarah
                 </h2>
