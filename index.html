@@ -153,10 +153,10 @@
             opacity: 1;
         }
 
-        /* TAMBAHAN BARU: Style untuk Magnetic Button */
+        /* Style untuk Magnetic Button */
         .magnetic-btn {
             display: inline-block;
-            transition: transform 0.3s ease-out; /* Transisi halus saat mouse keluar */
+            transition: transform 0.3s ease-out; 
             will-change: transform;
         }
     </style>
@@ -236,7 +236,7 @@
         </div>
     </nav>
 
-    <header class="relative w-full h-[80vh] flex items-center justify-center text-center text-white px-4">
+    <header class="relative w-full h-screen flex items-center justify-center text-center text-white px-4">
         
         <div class="parallax-wrapper">
             <div class="parallax-slider">
@@ -633,7 +633,7 @@
 
             revealElements.forEach(el => revealObserver.observe(el));
 
-            // --- TAMBAHAN BARU: Script untuk Magnetic Button ---
+            // Script untuk Magnetic Button
             const magneticBtn = document.querySelector('.magnetic-btn');
             if (magneticBtn) {
                 magneticBtn.addEventListener('mousemove', (e) => {
@@ -641,12 +641,11 @@
                     const x = e.clientX - rect.left - rect.width / 2;
                     const y = e.clientY - rect.top - rect.height / 2;
                     
-                    // Kurangi angka 0.3 ini kalau efek tarikanya dirasa terlalu kuat
+                    // Angka 0.3 adalah kekuatan daya tariknya
                     magneticBtn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
                 });
 
                 magneticBtn.addEventListener('mouseleave', () => {
-                    // Kembali ke posisi normal saat mouse pergi
                     magneticBtn.style.transform = 'translate(0px, 0px)';
                 });
             }
