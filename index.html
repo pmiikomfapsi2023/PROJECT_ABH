@@ -85,7 +85,7 @@
         
         /* Transisi Mobile Menu */
         #mobile-menu {
-            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
             max-height: 0;
             opacity: 0;
             overflow: hidden;
@@ -163,78 +163,80 @@
 </head>
 <body class="bg-stone-50 text-stone-800 overflow-x-hidden">
 
-    <nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50 transition-all duration-300">
-        <div class="flex items-center justify-between px-6 md:px-8 py-3 relative z-20">
-            
-            <a href="#" class="flex-shrink-0 hover:opacity-80 transition duration-300">
-                <img src="assets/img/logo1.png" alt="Logo AboutHistory" class="h-12 md:h-16 w-auto">
-            </a>
-            
-            <div class="hidden md:flex space-x-8 font-medium items-center">
-                <a href="#" class="text-stone-800 hover:text-amber-700 transition duration-300">Dashboard</a>
-                <a href="#about" class="text-stone-800 hover:text-amber-700 transition duration-300">About Us</a>
-                <a href="#services" class="text-stone-800 hover:text-amber-700 transition duration-300">Services</a>
-                <a href="#gallery" class="text-stone-800 hover:text-amber-700 transition duration-300">Gallery</a>
-                <a href="#career" class="text-stone-800 hover:text-amber-700 transition duration-300">Career</a>
+    <div class="fixed top-0 left-0 w-full z-50 px-4 pt-4 md:pt-6 pointer-events-none transition-all duration-300" id="nav-wrapper">
+        <nav class="bg-white/85 backdrop-blur-lg shadow-xl max-w-6xl mx-auto rounded-2xl md:rounded-full pointer-events-auto border border-white/50 transition-all duration-300 relative">
+            <div class="flex items-center justify-between px-5 md:px-8 py-2 md:py-3 relative z-20">
+                
+                <a href="#" class="flex-shrink-0 hover:opacity-80 transition duration-300">
+                    <img src="assets/img/logo1.png" alt="Logo AboutHistory" class="h-10 md:h-12 w-auto">
+                </a>
+                
+                <div class="hidden md:flex space-x-8 font-medium items-center">
+                    <a href="#" class="text-stone-800 hover:text-amber-700 transition duration-300 text-sm lg:text-base">Dashboard</a>
+                    <a href="#about" class="text-stone-800 hover:text-amber-700 transition duration-300 text-sm lg:text-base">About Us</a>
+                    <a href="#services" class="text-stone-800 hover:text-amber-700 transition duration-300 text-sm lg:text-base">Services</a>
+                    <a href="#gallery" class="text-stone-800 hover:text-amber-700 transition duration-300 text-sm lg:text-base">Gallery</a>
+                    <a href="#career" class="text-stone-800 hover:text-amber-700 transition duration-300 text-sm lg:text-base">Career</a>
+                </div>
+                
+                <div class="hidden md:block relative group">
+                    <button class="btn-outline-glow px-6 py-2 rounded-full flex items-center gap-2 font-medium text-sm lg:text-base">
+                        Contact <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div class="absolute right-0 top-full pt-4 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform origin-top scale-95 group-hover:scale-100">
+                        <div class="bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-stone-100 overflow-hidden">
+                            <a href="#" target="_blank" class="flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-amber-50 hover:text-amber-800 transition">
+                                <i class="fab fa-whatsapp w-6 text-green-600 text-lg"></i> Whatsapp
+                            </a>
+                            <a href="https://www.instagram.com/abouthistory.id" target="_blank" class="flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-amber-50 hover:text-amber-800 transition">
+                                <i class="fab fa-instagram w-6 text-pink-600 text-lg"></i> Instagram
+                            </a>
+                            <a href="https://www.tiktok.com/@abouthistory.id?_r=1&_t=ZS-95MjI40rLeb" target="_blank" class="flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-amber-50 hover:text-amber-800 transition">
+                                <i class="fab fa-tiktok w-6 text-black text-lg"></i> Tiktok
+                            </a>
+                            <a href="https://www.linkedin.com/company/abouthistory-id/" target="_blank" class="flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-amber-50 hover:text-amber-800 transition">
+                                <i class="fab fa-linkedin w-6 text-blue-700 text-lg"></i> Linkedin
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-stone-800 hover:text-amber-700 focus:outline-none transition duration-300 p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
             </div>
-            
-            <div class="hidden md:block relative group">
-                <button class="btn-outline-glow px-6 py-2 rounded-full flex items-center gap-2 font-medium">
-                    Contact <i class="fas fa-chevron-down text-xs"></i>
-                </button>
-                <div class="absolute right-0 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform origin-top scale-95 group-hover:scale-100">
-                    <div class="bg-white rounded-lg shadow-xl py-2 border border-stone-100 overflow-hidden">
-                        <a href="#" target="_blank" class="flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-amber-50 hover:text-amber-800 transition">
+
+            <div id="mobile-menu" class="md:hidden bg-white/95 backdrop-blur-xl border border-stone-100/50 absolute w-full left-0 top-[110%] rounded-2xl z-10 shadow-2xl">
+                <div class="px-6 py-5 flex flex-col space-y-4">
+                    <a href="#" class="text-stone-800 hover:text-amber-700 font-medium transition pl-2 border-l-2 border-transparent hover:border-amber-700">Dashboard</a>
+                    <a href="#about" class="text-stone-800 hover:text-amber-700 font-medium transition pl-2 border-l-2 border-transparent hover:border-amber-700">About Us</a>
+                    <a href="#services" class="text-stone-800 hover:text-amber-700 font-medium transition pl-2 border-l-2 border-transparent hover:border-amber-700">Services</a>
+                    <a href="#gallery" class="text-stone-800 hover:text-amber-700 font-medium transition pl-2 border-l-2 border-transparent hover:border-amber-700">Gallery</a>
+                    <a href="#career" class="text-stone-800 hover:text-amber-700 font-medium transition pl-2 border-l-2 border-transparent hover:border-amber-700">Career</a>
+                    
+                    <hr class="border-stone-200">
+                    
+                    <div class="text-stone-500 text-sm font-semibold mb-1">Hubungi Kami:</div>
+                    <div class="flex flex-col space-y-3">
+                        <a href="#" target="_blank" class="flex items-center text-stone-700 hover:text-amber-800 transition pl-2">
                             <i class="fab fa-whatsapp w-6 text-green-600 text-lg"></i> Whatsapp
                         </a>
-                        <a href="https://www.instagram.com/abouthistory.id" target="_blank" class="flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-amber-50 hover:text-amber-800 transition">
+                        <a href="https://www.instagram.com/abouthistory.id" target="_blank" class="flex items-center text-stone-700 hover:text-amber-800 transition pl-2">
                             <i class="fab fa-instagram w-6 text-pink-600 text-lg"></i> Instagram
                         </a>
-                        <a href="https://www.tiktok.com/@abouthistory.id?_r=1&_t=ZS-95MjI40rLeb" target="_blank" class="flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-amber-50 hover:text-amber-800 transition">
+                        <a href="https://www.tiktok.com/@abouthistory.id?_r=1&_t=ZS-95MjI40rLeb" target="_blank" class="flex items-center text-stone-700 hover:text-amber-800 transition pl-2">
                             <i class="fab fa-tiktok w-6 text-black text-lg"></i> Tiktok
                         </a>
-                        <a href="https://www.linkedin.com/company/abouthistory-id/" target="_blank" class="flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-amber-50 hover:text-amber-800 transition">
+                        <a href="https://www.linkedin.com/company/abouthistory-id/" target="_blank" class="flex items-center text-stone-700 hover:text-amber-800 transition pl-2">
                             <i class="fab fa-linkedin w-6 text-blue-700 text-lg"></i> Linkedin
                         </a>
                     </div>
                 </div>
             </div>
-
-            <div class="md:hidden flex items-center">
-                <button id="mobile-menu-button" class="text-stone-800 hover:text-amber-700 focus:outline-none transition duration-300">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
-            </div>
-        </div>
-
-        <div id="mobile-menu" class="md:hidden bg-white/95 backdrop-blur-md border-t border-stone-100 absolute w-full left-0 z-10 shadow-lg">
-            <div class="px-6 py-4 flex flex-col space-y-4">
-                <a href="#" class="text-stone-800 hover:text-amber-700 font-medium transition pl-2 border-l-2 border-transparent hover:border-amber-700">Dashboard</a>
-                <a href="#about" class="text-stone-800 hover:text-amber-700 font-medium transition pl-2 border-l-2 border-transparent hover:border-amber-700">About Us</a>
-                <a href="#services" class="text-stone-800 hover:text-amber-700 font-medium transition pl-2 border-l-2 border-transparent hover:border-amber-700">Services</a>
-                <a href="#gallery" class="text-stone-800 hover:text-amber-700 font-medium transition pl-2 border-l-2 border-transparent hover:border-amber-700">Gallery</a>
-                <a href="#career" class="text-stone-800 hover:text-amber-700 font-medium transition pl-2 border-l-2 border-transparent hover:border-amber-700">Career</a>
-                
-                <hr class="border-stone-200">
-                
-                <div class="text-stone-500 text-sm font-semibold mb-1">Hubungi Kami:</div>
-                <div class="flex flex-col space-y-3">
-                    <a href="#" target="_blank" class="flex items-center text-stone-700 hover:text-amber-800 transition pl-2">
-                        <i class="fab fa-whatsapp w-6 text-green-600 text-lg"></i> Whatsapp
-                    </a>
-                    <a href="https://www.instagram.com/abouthistory.id" target="_blank" class="flex items-center text-stone-700 hover:text-amber-800 transition pl-2">
-                        <i class="fab fa-instagram w-6 text-pink-600 text-lg"></i> Instagram
-                    </a>
-                    <a href="https://www.tiktok.com/@abouthistory.id?_r=1&_t=ZS-95MjI40rLeb" target="_blank" class="flex items-center text-stone-700 hover:text-amber-800 transition pl-2">
-                        <i class="fab fa-tiktok w-6 text-black text-lg"></i> Tiktok
-                    </a>
-                    <a href="https://www.linkedin.com/company/abouthistory-id/" target="_blank" class="flex items-center text-stone-700 hover:text-amber-800 transition pl-2">
-                        <i class="fab fa-linkedin w-6 text-blue-700 text-lg"></i> Linkedin
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
 
     <header class="relative w-full h-screen flex items-center justify-center text-center text-white px-4">
         
@@ -249,8 +251,8 @@
             <div class="absolute inset-0 z-10 bg-black/60 fixed h-full w-full"></div>
         </div>
         
-        <div class="relative z-20 max-w-4xl mx-auto w-full px-4">
-            <h1 class="mb-6 font-serif uppercase tracking-wide reveal">
+        <div class="relative z-20 max-w-4xl mx-auto w-full px-4 pt-16">
+            <h1 class="mb-6 font-serif uppercase tracking-wide reveal drop-shadow-2xl">
                 <div class="relative flex items-end justify-center gap-2 md:gap-5 mb-1 md:mb-2 leading-none">
                     <span class="text-5xl sm:text-6xl md:text-[5.5rem] font-bold leading-none hover:text-amber-200 transition duration-500 cursor-default">JELAJAHI</span>
                     <span class="text-xs sm:text-xl md:text-3xl font-bold tracking-[0.2em] md:tracking-widest pb-1.5 md:pb-3 leading-none opacity-90">MASA LALU</span>
@@ -261,7 +263,7 @@
                 </div>
             </h1>
             
-            <p class="text-sm sm:text-base md:text-lg font-light mb-10 opacity-90 max-w-3xl mx-auto leading-relaxed reveal delay-100">
+            <p class="text-sm sm:text-base md:text-lg font-light mb-10 opacity-90 max-w-3xl mx-auto leading-relaxed reveal delay-100 drop-shadow-md">
                 Platform edukasi sejarah modern yang mengajak Anda melihat peristiwa masa lalu melalui kacamata yang kritis, mendalam, dan relevan dengan kehidupan saat ini.
             </p>
             
