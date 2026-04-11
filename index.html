@@ -259,9 +259,9 @@
             </p>
             
             <div class="flex justify-center reveal delay-200">
-               <a id="cta-magnetic" href="#about" class="bg-[#d97706] hover:bg-[#b45309] text-white px-10 py-3.5 rounded-full font-semibold transition-all duration-300 shadow-lg inline-block text-sm md:text-base tracking-wide">
-    Mulai Menjelajah
-</a>
+                <a href="#about" class="bg-[#d97706] hover:bg-[#b45309] text-white px-10 py-3.5 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-105 inline-block text-sm md:text-base tracking-wide">
+                    Mulai Menjelajah
+                </a>
             </div>
         </div>
     </header>
@@ -652,22 +652,6 @@
                 });
             });
         });
-    <script>
-        <script>
-  const magnet = document.getElementById('cta-magnetic');
-
-  magnet.addEventListener('mousemove', (e) => {
-    const rect = magnet.getBoundingClientRect();
-    const x = (e.clientX - rect.left - rect.width / 2) * 0.35;
-    const y = (e.clientY - rect.top - rect.height / 2) * 0.35;
-    magnet.style.transform = `translate(${x}px, ${y}px) scale(1.07)`;
-    magnet.style.transition = 'transform 0.15s ease';
-  });
-
-  magnet.addEventListener('mouseleave', () => {
-    magnet.style.transform = 'translate(0px, 0px) scale(1)';
-    magnet.style.transition = 'transform 0.45s cubic-bezier(0.23, 1, 0.32, 1)';
-  });
-</script>
+    </script>
 </body>
 </html>
