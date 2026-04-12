@@ -116,12 +116,12 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: grayscale(100%); /* Foto awalnya Hitam Putih */
+            filter: grayscale(100%); 
             transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.7s ease;
         }
         .team-card:hover img {
-            transform: scale(1.05); /* Membesar saat di-hover */
-            filter: grayscale(0%); /* Berubah jadi berwarna */
+            transform: scale(1.05); 
+            filter: grayscale(0%); 
         }
         .team-social {
             position: absolute;
@@ -219,70 +219,107 @@
 
     <main class="relative z-30 bg-stone-50 shadow-2xl transform-gpu py-20 md:py-32">
         
-        <div class="max-w-6xl mx-auto px-6 md:px-8 mb-20">
+        <div class="max-w-6xl mx-auto px-6 md:px-8 mb-24">
             <div class="flex flex-col items-center reveal text-center">
                 <div class="w-full max-w-sm mb-6">
                     <div class="team-card h-[400px] md:h-[450px] shadow-xl group">
-                        <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Chairman">
-                        
+                        <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Direktur">
                         <div class="team-social">
                             <a href="#" class="text-white hover:text-[#d97706] transition text-xl"><i class="fab fa-linkedin"></i></a>
                             <a href="#" class="text-white hover:text-[#d97706] transition text-xl"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
-                <h3 class="text-2xl md:text-3xl font-serif text-stone-900 font-bold mb-1">Nama Lengkap</h3>
-                <p class="text-sm md:text-base font-semibold text-[#d97706] tracking-widest uppercase">Chairman / Founder</p>
-                <p class="mt-4 text-stone-500 text-sm max-w-md mx-auto leading-relaxed">Bertanggung jawab atas visi besar platform, memastikan narasi sejarah yang disampaikan berdampak dan bermakna.</p>
+                <h3 class="text-2xl md:text-3xl font-serif text-stone-900 font-bold mb-1">Nama Direktur</h3>
+                <p class="text-sm md:text-base font-semibold text-[#d97706] tracking-widest uppercase">Direktur</p>
+                <p class="mt-4 text-stone-500 text-sm max-w-md mx-auto leading-relaxed">Bertanggung jawab penuh atas visi strategis platform, memastikan setiap langkah perusahaan sejalan dengan nilai edukasi yang dibangun.</p>
             </div>
         </div>
 
-        <div class="max-w-6xl mx-auto px-6 md:px-8 mb-20">
+        <div class="max-w-6xl mx-auto px-6 md:px-8 mb-24">
             <div class="text-center mb-12 reveal">
-                <h2 class="text-2xl md:text-3xl font-serif text-stone-800">Manajemen Inti</h2>
+                <h2 class="text-2xl md:text-3xl font-serif text-stone-800">Executive Vice President</h2>
                 <div class="w-12 h-1 bg-[#d97706] mx-auto mt-4 rounded-full"></div>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 lg:gap-12">
-                <div class="reveal delay-100 flex flex-col">
+            <div class="flex flex-wrap justify-center gap-8 lg:gap-12">
+                
+                <div class="reveal delay-100 flex flex-col w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)]">
                     <div class="team-card h-[350px] shadow-lg mb-5 group">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Team Member">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="EVP 1">
                         <div class="team-social">
                             <a href="#" class="text-white hover:text-[#d97706] transition text-lg"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" class="text-white hover:text-[#d97706] transition text-lg"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
-                    <h3 class="text-xl font-serif text-stone-900 font-bold">Nama Lengkap</h3>
-                    <p class="text-xs font-semibold text-[#d97706] tracking-widest uppercase mt-1">Head of Content</p>
+                    <h3 class="text-xl font-serif text-stone-900 font-bold text-center">Nama EVP 1</h3>
+                    <p class="text-xs font-semibold text-[#d97706] tracking-widest uppercase mt-1 text-center">Executive Vice President</p>
                 </div>
 
-                <div class="reveal delay-200 flex flex-col">
+                <div class="reveal delay-200 flex flex-col w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)]">
                     <div class="team-card h-[350px] shadow-lg mb-5 group">
-                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Team Member">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="EVP 2">
                         <div class="team-social">
                             <a href="#" class="text-white hover:text-[#d97706] transition text-lg"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" class="text-white hover:text-[#d97706] transition text-lg"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
-                    <h3 class="text-xl font-serif text-stone-900 font-bold">Nama Lengkap</h3>
-                    <p class="text-xs font-semibold text-[#d97706] tracking-widest uppercase mt-1">Head of Research</p>
+                    <h3 class="text-xl font-serif text-stone-900 font-bold text-center">Nama EVP 2</h3>
+                    <p class="text-xs font-semibold text-[#d97706] tracking-widest uppercase mt-1 text-center">Executive Vice President</p>
                 </div>
 
-                <div class="reveal delay-300 flex flex-col">
+                <div class="reveal delay-300 flex flex-col w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)]">
                     <div class="team-card h-[350px] shadow-lg mb-5 group">
-                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Team Member">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="EVP 3">
                         <div class="team-social">
                             <a href="#" class="text-white hover:text-[#d97706] transition text-lg"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" class="text-white hover:text-[#d97706] transition text-lg"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
-                    <h3 class="text-xl font-serif text-stone-900 font-bold">Nama Lengkap</h3>
-                    <p class="text-xs font-semibold text-[#d97706] tracking-widest uppercase mt-1">Creative Director</p>
+                    <h3 class="text-xl font-serif text-stone-900 font-bold text-center">Nama EVP 3</h3>
+                    <p class="text-xs font-semibold text-[#d97706] tracking-widest uppercase mt-1 text-center">Executive Vice President</p>
+                </div>
+
+                <div class="reveal delay-100 flex flex-col w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)]">
+                    <div class="team-card h-[350px] shadow-lg mb-5 group">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="EVP 4">
+                        <div class="team-social">
+                            <a href="#" class="text-white hover:text-[#d97706] transition text-lg"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-serif text-stone-900 font-bold text-center">Nama EVP 4</h3>
+                    <p class="text-xs font-semibold text-[#d97706] tracking-widest uppercase mt-1 text-center">Executive Vice President</p>
+                </div>
+
+                <div class="reveal delay-200 flex flex-col w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)]">
+                    <div class="team-card h-[350px] shadow-lg mb-5 group">
+                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="EVP 5">
+                        <div class="team-social">
+                            <a href="#" class="text-white hover:text-[#d97706] transition text-lg"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-serif text-stone-900 font-bold text-center">Nama EVP 5</h3>
+                    <p class="text-xs font-semibold text-[#d97706] tracking-widest uppercase mt-1 text-center">Executive Vice President</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-6 md:px-8 mb-10">
+            <div class="text-center mb-12 reveal">
+                <h2 class="text-2xl md:text-3xl font-serif text-stone-800">Vice President</h2>
+                <div class="w-12 h-1 bg-[#d97706] mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="flex justify-center reveal delay-100">
+                <div class="bg-stone-200/50 border border-stone-300 border-dashed rounded-2xl p-10 text-center w-full max-w-2xl transition-all duration-300 hover:bg-stone-200">
+                    <div class="w-16 h-16 mx-auto bg-stone-300 text-stone-500 rounded-full flex items-center justify-center text-2xl mb-4 shadow-inner">
+                        <i class="fas fa-user-clock"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-serif text-stone-700 font-bold">Posisi Sedang Disiapkan</h3>
+                    <p class="text-sm md:text-base text-stone-500 mt-2 max-w-md mx-auto leading-relaxed">Susunan struktural untuk jajaran Vice President saat ini sedang dalam tahap penyesuaian dan pembaruan internal.</p>
                 </div>
             </div>
         </div>
 
-        <div class="max-w-4xl mx-auto px-6 text-center reveal pt-10 border-t border-stone-200">
+        <div class="max-w-4xl mx-auto px-6 text-center reveal pt-16 border-t border-stone-200 mt-20">
             <h2 class="text-2xl md:text-3xl font-serif text-stone-800 mb-4">Ingin Menjadi Bagian dari Kami?</h2>
             <p class="text-stone-500 text-sm md:text-base mb-8">Kami selalu membuka pintu bagi talenta berbakat yang memiliki semangat menceritakan sejarah.</p>
             <a href="/career" class="magnetic-btn bg-stone-900 hover:bg-[#d97706] text-white px-8 py-3 rounded-full text-sm font-medium transition-colors duration-300 shadow-lg hover:shadow-xl">
@@ -391,4 +428,4 @@
         });
     </script>
 </body>
-</html>te
+</html>
