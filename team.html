@@ -105,7 +105,7 @@
             will-change: transform;
         }
 
-        /* --- EFEK KHUSUS FOTO TIM (Grayscale to Color) --- */
+        /* --- PERBAIKAN: EFEK FOTO TIM DIBALIK (Berwarna ke Hitam Putih) --- */
         .team-card {
             position: relative;
             border-radius: 1rem;
@@ -116,12 +116,12 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: grayscale(100%); 
+            filter: grayscale(0%); /* Foto awalnya Berwarna */
             transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.7s ease;
         }
         .team-card:hover img {
-            transform: scale(1.05); 
-            filter: grayscale(0%); 
+            transform: scale(1.05); /* Tetap membesar saat di-hover */
+            filter: grayscale(100%); /* Berubah jadi Hitam Putih */
         }
         .team-social {
             position: absolute;
@@ -165,18 +165,10 @@
                     </button>
                     <div class="absolute right-0 top-full pt-4 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform origin-top scale-95 group-hover:scale-100">
                         <div class="bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-stone-100 overflow-hidden">
-                            <a href="#" target="_blank" class="flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-amber-50 hover:text-amber-800 transition">
-                                <i class="fab fa-whatsapp w-6 text-green-600 text-lg"></i> Whatsapp
-                            </a>
-                            <a href="https://www.instagram.com/abouthistory.id" target="_blank" class="flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-amber-50 hover:text-amber-800 transition">
-                                <i class="fab fa-instagram w-6 text-pink-600 text-lg"></i> Instagram
-                            </a>
-                            <a href="https://www.tiktok.com/@abouthistory.id?_r=1&_t=ZS-95MjI40rLeb" target="_blank" class="flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-amber-50 hover:text-amber-800 transition">
-                                <i class="fab fa-tiktok w-6 text-black text-lg"></i> Tiktok
-                            </a>
-                            <a href="https://www.linkedin.com/company/abouthistory-id/" target="_blank" class="flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-amber-50 hover:text-amber-800 transition">
-                                <i class="fab fa-linkedin w-6 text-blue-700 text-lg"></i> Linkedin
-                            </a>
+                            <a href="#" target="_blank" class="flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-amber-50 hover:text-amber-800 transition"><i class="fab fa-whatsapp w-6 text-green-600 text-lg"></i> Whatsapp</a>
+                            <a href="#" target="_blank" class="flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-amber-50 hover:text-amber-800 transition"><i class="fab fa-instagram w-6 text-pink-600 text-lg"></i> Instagram</a>
+                            <a href="#" target="_blank" class="flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-amber-50 hover:text-amber-800 transition"><i class="fab fa-tiktok w-6 text-black text-lg"></i> Tiktok</a>
+                            <a href="#" target="_blank" class="flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-amber-50 hover:text-amber-800 transition"><i class="fab fa-linkedin w-6 text-blue-700 text-lg"></i> Linkedin</a>
                         </div>
                     </div>
                 </div>
@@ -190,12 +182,12 @@
 
             <div id="mobile-menu" class="md:hidden bg-white/95 backdrop-blur-xl border border-stone-100/50 absolute w-full left-0 top-[110%] rounded-2xl z-10 shadow-2xl">
                 <div class="px-6 py-5 flex flex-col space-y-4">
-                    <a href="/" class="text-stone-800 hover:text-amber-700 font-medium transition pl-2">Dashboard</a>
-                    <a href="/#about" class="text-stone-800 hover:text-amber-700 font-medium transition pl-2">About Us</a>
-                    <a href="/#services" class="text-stone-800 hover:text-amber-700 font-medium transition pl-2">Services</a>
-                    <a href="/#gallery" class="text-stone-800 hover:text-amber-700 font-medium transition pl-2">Gallery</a>
+                    <a href="/" class="text-stone-800 hover:text-amber-700 font-medium transition pl-2 border-l-2 border-transparent hover:border-amber-700">Dashboard</a>
+                    <a href="/#about" class="text-stone-800 hover:text-amber-700 font-medium transition pl-2 border-l-2 border-transparent hover:border-amber-700">About Us</a>
+                    <a href="/#services" class="text-stone-800 hover:text-amber-700 font-medium transition pl-2 border-l-2 border-transparent hover:border-amber-700">Services</a>
+                    <a href="/#gallery" class="text-stone-800 hover:text-amber-700 font-medium transition pl-2 border-l-2 border-transparent hover:border-amber-700">Gallery</a>
                     <a href="/team" class="text-amber-700 border-l-2 border-amber-700 font-bold transition pl-2">Team</a>
-                    <a href="/career" class="text-stone-800 hover:text-amber-700 font-medium transition pl-2">Career</a>
+                    <a href="/career" class="text-stone-800 hover:text-amber-700 font-medium transition pl-2 border-l-2 border-transparent hover:border-amber-700">Career</a>
                     
                     <hr class="border-stone-200">
                     
@@ -219,7 +211,7 @@
         </nav>
     </div>
 
-    <header class="relative w-full h-[100dvh] flex items-center justify-center text-center text-white px-4">
+    <header class="relative w-full h-[80dvh] md:h-[100dvh] flex items-center justify-center text-center text-white px-4">
         
         <div class="parallax-wrapper">
             <div class="parallax-slider">
@@ -233,7 +225,7 @@
         </div>
         
         <div class="relative z-20 max-w-4xl mx-auto w-full px-4 pt-16">
-            <p class="text-[#d97706] font-bold tracking-[0.3em] uppercase text-xs md:text-sm mb-4 reveal drop-shadow-lg">THE PEOPLE</p>
+            <p class="text-[#d97706] font-bold tracking-[0.3em] uppercase text-xs md:text-sm mb-4 reveal">THE PEOPLE</p>
             <h1 class="mb-5 md:mb-6 font-serif uppercase tracking-wide reveal delay-100 drop-shadow-2xl">
                 <div class="relative flex items-end justify-center gap-2 md:gap-5 mb-1 md:mb-2 leading-none">
                     <span class="text-4xl sm:text-5xl md:text-[5rem] font-bold leading-none cursor-default">DI BALIK</span>
@@ -241,7 +233,7 @@
                 </div>
             </h1>
             
-            <p class="text-sm sm:text-base md:text-lg font-light mb-8 md:mb-10 opacity-90 max-w-2xl mx-auto leading-relaxed reveal delay-200 drop-shadow-md px-2">
+            <p class="text-sm sm:text-base md:text-lg font-light mb-8 opacity-90 max-w-2xl mx-auto leading-relaxed reveal delay-200 drop-shadow-md px-2">
                 Mengenal lebih dekat para pemikir, kreator, dan penggerak yang merangkai cerita sejarah menjadi relevan dan bernyawa di era modern.
             </p>
         </div>
@@ -281,7 +273,7 @@
                             <a href="#" class="text-white hover:text-[#d97706] transition text-lg"><i class="fab fa-linkedin"></i></a>
                         </div>
                     </div>
-                    <h3 class="text-xl font-serif text-stone-900 font-bold text-center">Adam Fauzan S.Psi</h3>
+                    <h3 class="text-xl font-serif text-stone-900 font-bold text-center">Nama EVP 1</h3>
                     <p class="text-xs font-semibold text-[#d97706] tracking-widest uppercase mt-1 text-center">Executive Vice President</p>
                 </div>
 
@@ -292,7 +284,7 @@
                             <a href="#" class="text-white hover:text-[#d97706] transition text-lg"><i class="fab fa-linkedin"></i></a>
                         </div>
                     </div>
-                    <h3 class="text-xl font-serif text-stone-900 font-bold text-center">Trasta Intan Julia C</h3>
+                    <h3 class="text-xl font-serif text-stone-900 font-bold text-center">Nama EVP 2</h3>
                     <p class="text-xs font-semibold text-[#d97706] tracking-widest uppercase mt-1 text-center">Executive Vice President</p>
                 </div>
 
@@ -303,7 +295,7 @@
                             <a href="#" class="text-white hover:text-[#d97706] transition text-lg"><i class="fab fa-linkedin"></i></a>
                         </div>
                     </div>
-                    <h3 class="text-xl font-serif text-stone-900 font-bold text-center">Muhammad Tri Putra Alfiyando</h3>
+                    <h3 class="text-xl font-serif text-stone-900 font-bold text-center">Nama EVP 3</h3>
                     <p class="text-xs font-semibold text-[#d97706] tracking-widest uppercase mt-1 text-center">Executive Vice President</p>
                 </div>
 
@@ -314,7 +306,7 @@
                             <a href="#" class="text-white hover:text-[#d97706] transition text-lg"><i class="fab fa-linkedin"></i></a>
                         </div>
                     </div>
-                    <h3 class="text-xl font-serif text-stone-900 font-bold text-center">Stevania Camelia</h3>
+                    <h3 class="text-xl font-serif text-stone-900 font-bold text-center">Nama EVP 4</h3>
                     <p class="text-xs font-semibold text-[#d97706] tracking-widest uppercase mt-1 text-center">Executive Vice President</p>
                 </div>
 
@@ -325,7 +317,7 @@
                             <a href="#" class="text-white hover:text-[#d97706] transition text-lg"><i class="fab fa-linkedin"></i></a>
                         </div>
                     </div>
-                    <h3 class="text-xl font-serif text-stone-900 font-bold text-center">Rifki Gunawan S.P</h3>
+                    <h3 class="text-xl font-serif text-stone-900 font-bold text-center">Nama EVP 5</h3>
                     <p class="text-xs font-semibold text-[#d97706] tracking-widest uppercase mt-1 text-center">Executive Vice President</p>
                 </div>
 
@@ -393,9 +385,6 @@
                 <ul class="space-y-4 text-sm inline-block text-left">
                     <li class="flex items-center justify-start gap-3">
                         <i class="far fa-envelope text-[#d97706] w-5 text-center"></i> halo@abouthistory.id
-                    </li>
-                    <li class="flex items-center justify-start gap-3">
-                        <i class="fas fa-phone text-[#d97706] w-5 text-center"></i> +62 812 3456 7890
                     </li>
                     <li class="flex items-start justify-start gap-3">
                         <i class="fas fa-map-marker-alt text-[#d97706] w-5 text-center mt-1"></i> 
