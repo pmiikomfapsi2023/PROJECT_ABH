@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Di Balik Layar - ABOUTHISTORY.ID</title>
+    <title>ABOUTHISTORY.ID #KACAMATA SEJARAH</title>
     
     <link rel="icon" type="image/png" href="assets/img/logos.png">
+    
+    <meta property="og:title" content="Abouthistory.id #Kacamata Sejarah" />
+    <meta property="og:image" content="assets/img/logos.png" />
+    <meta property="og:type" content="website" />
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -13,10 +17,9 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap');
         
-        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #1c1917; overflow-x: hidden; }
-        h1, h2, h3, .font-serif { font-family: 'Playfair Display', serif; }
-
-        /* --- Parallax & Header --- */
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, .font-serif { font-family: 'Playfair Display', serif; }
+        
         .parallax-wrapper {
             position: absolute;
             top: 0;
@@ -46,8 +49,24 @@
             75%, 90%  { transform: translateX(-60%); }
             100%      { transform: translateX(-80%); }
         }
+        
+        @keyframes scroll-right {
+            0%   { transform: translateX(-50%); }
+            100% { transform: translateX(0%); }
+        }
+        
+        .animate-marquee {
+            animation: scroll-right 40s linear infinite;
+            display: flex;
+            width: max-content;
+        }
 
-        /* --- Animasi Fade In --- */
+        @media (hover: hover) {
+            .animate-marquee:hover {
+                animation-play-state: paused;
+            }
+        }
+
         .reveal {
             opacity: 0;
             transform: translateY(40px);
@@ -61,7 +80,6 @@
         .delay-200 { transition-delay: 200ms; }
         .delay-300 { transition-delay: 300ms; }
         
-        /* Mobile Menu */
         #mobile-menu {
             transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
             max-height: 0;
@@ -73,7 +91,6 @@
             opacity: 1;
         }
 
-        /* --- Efek Tombol & Interaksi --- */
         .btn-outline-glow {
             position: relative;
             background: transparent;
@@ -96,66 +113,63 @@
             transform-origin: right;
             transition: transform 0.4s ease-in-out;
         }
-        .btn-outline-glow:hover { color: white; border-color: #d97706; }
-        .btn-outline-glow:hover::before { transform: scaleX(1); transform-origin: left; }
+        .btn-outline-glow:hover {
+            color: white; 
+            border-color: #d97706;
+        }
+        .btn-outline-glow:hover::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.75rem;
+        }
+        .gallery-item img {
+            transition: transform 0.7s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+        }
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
 
         .magnetic-btn {
             display: inline-block;
             transition: transform 0.3s ease-out; 
             will-change: transform;
         }
-
-        /* --- EFEK KHUSUS FOTO TIM (Berwarna ke Hitam Putih) --- */
-        .team-card {
-            position: relative;
-            border-radius: 1rem;
-            overflow: hidden;
-            cursor: pointer;
-        }
-        .team-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: grayscale(0%); 
-            transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.7s ease;
-        }
-        .team-card:hover img {
-            transform: scale(1.05); 
-            filter: grayscale(100%); 
-        }
-        .team-social {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-            padding: 2rem 1.5rem 1rem;
-            transform: translateY(100%);
-            transition: transform 0.4s ease-in-out;
-            display: flex;
-            gap: 1rem;
-        }
-        .team-card:hover .team-social {
-            transform: translateY(0);
-        }
     </style>
 </head>
-<body class="overflow-x-hidden">
+<body class="bg-stone-50 text-stone-800 overflow-x-hidden">
 
     <div class="fixed top-0 left-0 w-full z-50 px-4 pt-4 md:pt-6 pointer-events-none transition-all duration-300" id="nav-wrapper">
         <nav class="bg-white/85 backdrop-blur-lg shadow-xl max-w-6xl mx-auto rounded-2xl md:rounded-full pointer-events-auto border border-white/50 transition-all duration-300 relative">
             <div class="flex items-center justify-between px-5 md:px-8 py-2 md:py-3 relative z-20">
                 
-                <a href="/" class="flex-shrink-0 hover:opacity-80 transition duration-300">
+                <a href="#" class="flex-shrink-0 hover:opacity-80 transition duration-300">
                     <img src="assets/img/logo1.png" alt="Logo AboutHistory" class="h-10 md:h-12 w-auto">
                 </a>
                 
                 <div class="hidden md:flex space-x-8 font-medium items-center">
-                    <a href="/" class="text-stone-800 hover:text-amber-700 transition duration-300 text-sm lg:text-base">Dashboard</a>
-                    <a href="/#about" class="text-stone-800 hover:text-amber-700 transition duration-300 text-sm lg:text-base">About Us</a>
-                    <a href="/#services" class="text-stone-800 hover:text-amber-700 transition duration-300 text-sm lg:text-base">Services</a>
-                    <a href="/#gallery" class="text-stone-800 hover:text-amber-700 transition duration-300 text-sm lg:text-base">Gallery</a>
-                    <a href="/team" class="text-amber-700 font-bold transition duration-300 text-sm lg:text-base">Team</a>
+                    <a href="#" class="text-stone-800 hover:text-amber-700 transition duration-300 text-sm lg:text-base">Dashboard</a>
+                    <a href="#about" class="text-stone-800 hover:text-amber-700 transition duration-300 text-sm lg:text-base">About Us</a>
+                    <a href="#services" class="text-stone-800 hover:text-amber-700 transition duration-300 text-sm lg:text-base">Services</a>
+                    <a href="#gallery" class="text-stone-800 hover:text-amber-700 transition duration-300 text-sm lg:text-base">Gallery</a>
+                    <a href="/team" class="text-stone-800 hover:text-amber-700 transition duration-300 text-sm lg:text-base">Team</a>
                     <a href="/career" class="text-stone-800 hover:text-amber-700 transition duration-300 text-sm lg:text-base">Career</a>
                 </div>
                 
@@ -165,10 +179,18 @@
                     </button>
                     <div class="absolute right-0 top-full pt-4 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform origin-top scale-95 group-hover:scale-100">
                         <div class="bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-stone-100 overflow-hidden">
-                            <a href="https://wa.me/6285692724483?text=Halo%20admin,%20saya%20ingin" target="_blank" class="flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-amber-50 hover:text-amber-800 transition"><i class="fab fa-whatsapp w-6 text-green-600 text-lg"></i> Whatsapp</a>
-                            <a href="https://www.instagram.com/abouthistory.id" target="_blank" class="flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-amber-50 hover:text-amber-800 transition"><i class="fab fa-instagram w-6 text-pink-600 text-lg"></i> Instagram</a>
-                            <a href="https://www.tiktok.com/@abouthistory.id?_r=1&_t=ZS-95MjI40rLeb" target="_blank" class="flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-amber-50 hover:text-amber-800 transition"><i class="fab fa-tiktok w-6 text-black text-lg"></i> Tiktok</a>
-                            <a href="https://www.linkedin.com/company/abouthistory-id/" target="_blank" class="flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-amber-50 hover:text-amber-800 transition"><i class="fab fa-linkedin w-6 text-blue-700 text-lg"></i> Linkedin</a>
+                            <a href="https://wa.me/6285692724483?text=Halo%20admin,%20saya%20ingin" target="_blank" class="flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-amber-50 hover:text-amber-800 transition">
+                                <i class="fab fa-whatsapp w-6 text-green-600 text-lg"></i> Whatsapp
+                            </a>
+                            <a href="https://www.instagram.com/abouthistory.id" target="_blank" class="flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-amber-50 hover:text-amber-800 transition">
+                                <i class="fab fa-instagram w-6 text-pink-600 text-lg"></i> Instagram
+                            </a>
+                            <a href="https://www.tiktok.com/@abouthistory.id?_r=1&_t=ZS-95MjI40rLeb" target="_blank" class="flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-amber-50 hover:text-amber-800 transition">
+                                <i class="fab fa-tiktok w-6 text-black text-lg"></i> Tiktok
+                            </a>
+                            <a href="https://www.linkedin.com/company/abouthistory-id/" target="_blank" class="flex items-center px-4 py-3 text-sm text-stone-700 hover:bg-amber-50 hover:text-amber-800 transition">
+                                <i class="fab fa-linkedin w-6 text-blue-700 text-lg"></i> Linkedin
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -182,12 +204,12 @@
 
             <div id="mobile-menu" class="md:hidden bg-white/95 backdrop-blur-xl border border-stone-100/50 absolute w-full left-0 top-[110%] rounded-2xl z-10 shadow-2xl">
                 <div class="px-6 py-5 flex flex-col space-y-4">
-                    <a href="/" class="text-stone-800 hover:text-amber-700 font-medium transition pl-2">Dashboard</a>
-                    <a href="/#about" class="text-stone-800 hover:text-amber-700 font-medium transition pl-2">About Us</a>
-                    <a href="/#services" class="text-stone-800 hover:text-amber-700 font-medium transition pl-2">Services</a>
-                    <a href="/#gallery" class="text-stone-800 hover:text-amber-700 font-medium transition pl-2">Gallery</a>
-                    <a href="/team" class="text-amber-700 border-l-2 border-amber-700 font-bold transition pl-2">Team</a>
-                    <a href="/career" class="text-stone-800 hover:text-amber-700 font-medium transition pl-2">Career</a>
+                    <a href="#" class="text-stone-800 hover:text-amber-700 font-medium transition pl-2 border-l-2 border-transparent hover:border-amber-700">Dashboard</a>
+                    <a href="#about" class="text-stone-800 hover:text-amber-700 font-medium transition pl-2 border-l-2 border-transparent hover:border-amber-700">About Us</a>
+                    <a href="#services" class="text-stone-800 hover:text-amber-700 font-medium transition pl-2 border-l-2 border-transparent hover:border-amber-700">Services</a>
+                    <a href="#gallery" class="text-stone-800 hover:text-amber-700 font-medium transition pl-2 border-l-2 border-transparent hover:border-amber-700">Gallery</a>
+                    <a href="/team" class="text-stone-800 hover:text-amber-700 font-medium transition pl-2 border-l-2 border-transparent hover:border-amber-700">Team</a>
+                    <a href="/career" class="text-stone-800 hover:text-amber-700 font-medium transition pl-2 border-l-2 border-transparent hover:border-amber-700">Career</a>
                     
                     <hr class="border-stone-200">
                     
@@ -211,204 +233,319 @@
         </nav>
     </div>
 
-    <header class="relative w-full h-[80dvh] md:h-[100dvh] flex items-center justify-center text-center text-white px-4">
+    <header class="relative w-full h-[100dvh] flex items-center justify-center text-center text-white px-4">
         
         <div class="parallax-wrapper">
             <div class="parallax-slider">
-                <div class="w-1/5 h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
-                <div class="w-1/5 h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
-                <div class="w-1/5 h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
-                <div class="w-1/5 h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
-                <div class="w-1/5 h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
+                <div class="w-1/5 h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1461360370896-922624d12aa1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
+                <div class="w-1/5 h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
+                <div class="w-1/5 h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
+                <div class="w-1/5 h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
+                <div class="w-1/5 h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1461360370896-922624d12aa1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
             </div>
-            <div class="absolute inset-0 z-10 bg-black/70 fixed h-full w-full"></div>
+            <div class="absolute inset-0 z-10 bg-black/60 fixed h-full w-full"></div>
         </div>
         
         <div class="relative z-20 max-w-4xl mx-auto w-full px-4 pt-16">
-            <p class="text-[#d97706] font-bold tracking-[0.3em] uppercase text-xs md:text-sm mb-4 reveal">THE PEOPLE</p>
-            <h1 class="mb-5 md:mb-6 font-serif uppercase tracking-wide reveal delay-100 drop-shadow-2xl">
+            <h1 class="mb-5 md:mb-6 font-serif uppercase tracking-wide reveal drop-shadow-2xl">
                 <div class="relative flex items-end justify-center gap-2 md:gap-5 mb-1 md:mb-2 leading-none">
-                    <span class="text-4xl sm:text-5xl md:text-[5rem] font-bold leading-none cursor-default">DI BALIK</span>
-                    <span class="text-[10px] sm:text-sm md:text-2xl font-bold tracking-[0.2em] md:tracking-widest pb-0.5 md:pb-2 leading-none opacity-90 text-[#d97706]">LAYAR</span>
+                    <span class="text-4xl sm:text-5xl md:text-[5.5rem] font-bold leading-none hover:text-amber-200 transition duration-500 cursor-default">JELAJAHI</span>
+                    <span class="text-[10px] sm:text-sm md:text-3xl font-bold tracking-[0.2em] md:tracking-widest pb-0.5 md:pb-3 leading-none opacity-90">MASA LALU</span>
+                </div>
+                <div class="relative flex items-end justify-center gap-2 md:gap-5 leading-none">
+                    <span class="text-[10px] sm:text-sm md:text-3xl font-bold tracking-[0.2em] md:tracking-widest pb-0.5 md:pb-3 leading-none opacity-90">PAHAMI</span>
+                    <span class="text-4xl sm:text-5xl md:text-[5.5rem] font-bold leading-none hover:text-amber-200 transition duration-500 cursor-default">MASA KINI</span>
                 </div>
             </h1>
             
-            <p class="text-sm sm:text-base md:text-lg font-light mb-8 opacity-90 max-w-2xl mx-auto leading-relaxed reveal delay-200 drop-shadow-md px-2">
-                Mengenal lebih dekat para pemikir, kreator, dan penggerak yang merangkai cerita sejarah menjadi relevan dan bernyawa di era modern.
+            <p class="text-sm sm:text-base md:text-lg font-light mb-8 md:mb-10 opacity-90 max-w-3xl mx-auto leading-relaxed reveal delay-100 drop-shadow-md px-2">
+                Platform edukasi sejarah modern yang mengajak Anda melihat peristiwa masa lalu melalui kacamata yang kritis, mendalam, dan relevan dengan kehidupan saat ini.
             </p>
+            
+            <div class="flex justify-center reveal delay-200">
+                <a href="#about" class="magnetic-btn bg-[#d97706] hover:bg-[#b45309] text-white px-8 md:px-10 py-3 md:py-3.5 rounded-full font-semibold shadow-lg hover:shadow-2xl inline-block text-sm md:text-base tracking-wide">
+                    Mulai Menjelajah
+                </a>
+            </div>
         </div>
     </header>
 
-    <main class="relative z-30 bg-stone-50 shadow-2xl transform-gpu py-20 md:py-32">
+    <main class="relative z-30 bg-stone-50 shadow-2xl transform-gpu">
         
-        <div class="max-w-6xl mx-auto px-6 md:px-8 mb-24">
-            <div class="flex flex-col items-center reveal text-center">
-                <div class="w-full max-w-sm mb-6">
-                    <div class="team-card h-[400px] md:h-[450px] shadow-xl group">
-                        <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Direktur">
-                        <div class="team-social">
-                            <a href="#" class="text-white hover:text-[#d97706] transition text-xl"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" class="text-white hover:text-[#d97706] transition text-xl"><i class="fab fa-instagram"></i></a>
-                        </div>
+        <section id="stats-section" class="py-8 md:py-10 bg-[#b45309] text-[#fffbeb]">
+            <div class="max-w-6xl mx-auto px-2 md:px-8 grid grid-cols-3 gap-2 md:gap-6 text-center">
+                <div>
+                    <i class="fas fa-briefcase text-xl md:text-2xl mb-2 opacity-90"></i>
+                    <div class="text-xl sm:text-2xl md:text-4xl font-bold mb-1 font-serif"><span class="counter" data-target="54">0</span>+</div>
+                    <div class="text-[9px] sm:text-[10px] md:text-xs uppercase tracking-widest opacity-80 leading-tight font-medium">Projects Completed</div>
+                </div>
+                <div>
+                    <i class="fab fa-instagram text-xl md:text-2xl mb-2 opacity-90"></i>
+                    <div class="text-xl sm:text-2xl md:text-4xl font-bold mb-1 font-serif"><span class="counter" data-target="117">0</span>k</div>
+                    <div class="text-[9px] sm:text-[10px] md:text-xs uppercase tracking-widest opacity-80 leading-tight font-medium">Instagram Followers</div>
+                </div>
+                <div>
+                    <i class="fab fa-tiktok text-xl md:text-2xl mb-2 opacity-90"></i>
+                    <div class="text-xl sm:text-2xl md:text-4xl font-bold mb-1 font-serif"><span class="counter" data-target="115">0</span>k</div>
+                    <div class="text-[9px] sm:text-[10px] md:text-xs uppercase tracking-widest opacity-80 leading-tight font-medium">Tiktok Followers</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-16 md:py-24 max-w-6xl mx-auto px-6 md:px-8 grid md:grid-cols-2 gap-10 md:gap-16 items-center bg-stone-50 text-center md:text-left">
+            <div class="order-2 md:order-1 reveal">
+                <h2 class="text-3xl md:text-4xl mb-4 md:mb-6 font-serif text-stone-900">About Us</h2>
+                <div class="w-16 h-1 bg-[#d97706] mb-6 rounded-full mx-auto md:mx-0"></div>
+                <div class="space-y-4 text-stone-600 leading-relaxed text-sm md:text-base text-left">
+                    <p>
+                        <strong>Abouthistory.id</strong> adalah media edukasi dan entertainment yang percaya bahwa sejarah bukan hanya masa lalu, tetapi cermin untuk memahami realitas hari ini.
+                    </p>
+                    <p>
+                        Dengan konten visual yang menarik dan narasi singkat yang mudah dipahami, kami menghadirkan isu-isu terkini dalam bingkai sejarah agar lebih dekat, relevan, dan menyentuh kehidupan sehari-hari.
+                    </p>
+                    <p>
+                        Selain menjadi ruang belajar dan diskusi, kami juga terbuka untuk bekerja sama dengan brand, instansi, komunitas, maupun lembaga pendidikan. Melalui kolaborasi kreatif, Abouthistory.id berkomitmen menghadirkan konten yang tidak hanya informatif, tetapi juga berdampak, membangun kesadaran kritis, dan memberi nilai lebih bagi audiens maupun mitra.
+                    </p>
+                </div>
+            </div>
+            <div class="order-1 md:order-2 reveal delay-200">
+                <div class="overflow-hidden rounded-xl shadow-2xl relative">
+                    <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Library" class="w-full h-auto hover:scale-105 transition-transform duration-700">
+                    <div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-6 py-4 rounded-lg shadow-lg border-l-4 border-[#d97706] max-w-xs hidden md:block text-left">
+                        <p class="font-serif italic text-stone-800 font-semibold mb-1">"History is a guide to navigation in perilous times."</p>
+                        <p class="text-xs text-stone-500 uppercase tracking-wider">— David McCullough</p>
                     </div>
                 </div>
-                <h3 class="text-2xl md:text-3xl font-serif text-stone-900 font-bold mb-1">Nama Direktur</h3>
-                <p class="text-sm md:text-base font-semibold text-[#d97706] tracking-widest uppercase">Direktur</p>
-                <p class="mt-4 text-stone-500 text-sm max-w-md mx-auto leading-relaxed">Bertanggung jawab penuh atas visi strategis platform, memastikan setiap langkah perusahaan sejalan dengan nilai edukasi yang dibangun.</p>
             </div>
-        </div>
+        </section>
 
-        <div class="max-w-6xl mx-auto px-6 md:px-8 mb-24">
-            <div class="text-center mb-12 reveal">
-                <h2 class="text-2xl md:text-3xl font-serif text-stone-800">Executive Vice President</h2>
+        <section id="client-marquee" class="pt-10 pb-16 bg-stone-50 overflow-hidden border-t border-stone-200">
+            <div class="max-w-6xl mx-auto px-6 md:px-8 mb-10 text-center reveal">
+                <p class="text-xs font-semibold tracking-[0.3em] uppercase text-stone-400 mb-2">Dipercaya Oleh</p>
+                <h2 class="text-2xl md:text-3xl font-serif text-stone-800">Klien & Mitra Kami</h2>
                 <div class="w-12 h-1 bg-[#d97706] mx-auto mt-4 rounded-full"></div>
             </div>
-
-            <div class="flex flex-wrap justify-center gap-8 lg:gap-12">
+            
+            <div class="relative w-full flex items-center reveal delay-100">
+                <div class="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-stone-50 to-transparent z-10 pointer-events-none"></div>
+                <div class="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-stone-50 to-transparent z-10 pointer-events-none"></div>
                 
-                <div class="reveal delay-100 flex flex-col w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)]">
-                    <div class="team-card h-[350px] shadow-lg mb-5 group">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="EVP 1">
-                        <div class="team-social">
-                            <a href="#" class="text-white hover:text-[#d97706] transition text-lg"><i class="fab fa-linkedin"></i></a>
-                        </div>
+                <div class="animate-marquee items-center">
+                    <div class="flex flex-shrink-0 gap-10 md:gap-16 pr-10 md:pr-16 items-center">
+                        <img src="assets/img/Client1.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 1">
+                        <img src="assets/img/Client2.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 2">
+                        <img src="assets/img/Client3.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 3">
+                        <img src="assets/img/Client4.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 4">
+                        <img src="assets/img/Client5.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 5">
+                        <img src="assets/img/Client6.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 6">
+                        <img src="assets/img/Client7.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 7">
+                        <img src="assets/img/Client8.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 8">
+                        <img src="assets/img/Client9.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 9">
+                        <img src="assets/img/client10.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 10">
+                        <img src="assets/img/client11.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 11">
+                        <img src="assets/img/client12.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 12">
+                        <img src="assets/img/client13.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 13">
+                         <img src="assets/img/client14.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 14">
+                         <img src="assets/img/client15.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 15">
+                         <img src="assets/img/client16.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 16">
                     </div>
-                    <h3 class="text-xl font-serif text-stone-900 font-bold text-center">Nama EVP 1</h3>
-                    <p class="text-xs font-semibold text-[#d97706] tracking-widest uppercase mt-1 text-center">Executive Vice President</p>
+                    <div class="flex flex-shrink-0 gap-10 md:gap-16 pr-10 md:pr-16 items-center">
+                        <img src="assets/img/Client1.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 1">
+                        <img src="assets/img/Client2.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 2">
+                        <img src="assets/img/Client3.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 3">
+                        <img src="assets/img/Client4.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 4">
+                        <img src="assets/img/Client5.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 5">
+                        <img src="assets/img/Client6.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 6">
+                        <img src="assets/img/Client7.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 7">
+                        <img src="assets/img/Client8.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 8">
+                        <img src="assets/img/Client9.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 9">
+                        <img src="assets/img/client10.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 10">
+                        <img src="assets/img/client11.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 11">
+                        <img src="assets/img/client12.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 12">
+                        <img src="assets/img/client13.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 13">
+                         <img src="assets/img/client14.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 14">
+                         <img src="assets/img/client15.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 15">
+                         <img src="assets/img/client16.png" class="h-16 md:h-24 w-auto max-w-none flex-shrink-0 object-contain transition-transform duration-300 hover:scale-110" alt="Client 16">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-16 md:py-24 bg-white">
+            <div class="max-w-6xl mx-auto px-6 md:px-8">
+                <div class="text-center mb-12 md:mb-20 reveal">
+                    <p class="text-xs font-semibold tracking-[0.3em] uppercase text-stone-400 mb-3">Layanan Kami</p>
+                    <h2 class="text-3xl md:text-5xl font-serif text-stone-900 leading-tight">Solusi Kreatif Berbasis <span class="italic text-[#d97706]">Sejarah</span></h2>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+                    <div class="p-4 rounded-2xl transition-all duration-500 group reveal delay-100 flex flex-col items-center md:items-start text-center md:text-left hover:-translate-y-1">
+                        <div class="w-14 h-14 bg-stone-900 text-white rounded-2xl flex items-center justify-center text-xl mb-5 md:mb-6 shadow-lg group-hover:bg-[#d97706] transition duration-300">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 font-serif text-stone-900">Social Media Campaign</h3>
+                        <p class="text-stone-600 text-sm md:text-base leading-relaxed">
+                            Layanan ini berfokus pada perencanaan, pembuatan, dan pelaksanaan kampanye di media sosial untuk mencapai tujuan tertentu—baik itu meningkatkan brand awareness, engagement, penjualan, atau membangun komunitas.
+                        </p>
+                    </div>
+
+                    <div class="p-4 rounded-2xl transition-all duration-500 group reveal delay-200 flex flex-col items-center md:items-start text-center md:text-left hover:-translate-y-1">
+                        <div class="w-14 h-14 bg-stone-900 text-white rounded-2xl flex items-center justify-center text-xl mb-5 md:mb-6 shadow-lg group-hover:bg-[#d97706] transition duration-300">
+                            <i class="fas fa-share-nodes"></i>
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 font-serif text-stone-900">Come & Share With Us</h3>
+                        <p class="text-stone-600 text-sm md:text-base leading-relaxed">
+                            Kami melakukan kunjungan langsung ke lokasi untuk mendokumentasikan dan mengulas tempat Anda secara komprehensif. Konten yang dihasilkan akan disesuaikan dengan identitas dan keunggulan lokasi, sekaligus mengaitkan dengan nilai sejarah, hukum, politik, atau HAM yang relevan.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="py-16 md:py-24 bg-stone-50">
+            <div class="max-w-6xl mx-auto px-6 md:px-8">
+                <div class="flex flex-col md:flex-row justify-between items-center md:items-end text-center md:text-left mb-10 md:mb-12 reveal">
+                    <div>
+                        <p class="text-xs font-semibold tracking-[0.3em] uppercase text-stone-400 mb-2">Dokumentasi</p>
+                        <h2 class="text-3xl md:text-4xl font-serif text-stone-900">Galeri <span class="italic text-[#d97706]">Visual</span></h2>
+                    </div>
+                    <div class="mt-4 md:mt-0">
+                        <a href="#" class="text-sm font-medium text-stone-500 hover:text-[#d97706] transition-colors flex items-center gap-2">Lihat Semua <i class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
 
-                <div class="reveal delay-200 flex flex-col w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)]">
-                    <div class="team-card h-[350px] shadow-lg mb-5 group">
-                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="EVP 2">
-                        <div class="team-social">
-                            <a href="#" class="text-white hover:text-[#d97706] transition text-lg"><i class="fab fa-linkedin"></i></a>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="gallery-item md:col-span-2 h-64 md:h-80 bg-stone-200 reveal delay-100 group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1461360370896-922624d12aa1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Gallery 1" class="w-full h-full object-cover">
+                        <div class="gallery-overlay">
+                            <div class="text-white transform translate-y-4 group-hover:translate-y-0 transition duration-300 text-left">
+                                <p class="text-xs font-bold uppercase tracking-widest text-[#d97706] mb-1">Eksplorasi</p>
+                                <h3 class="text-xl font-serif">Kunjungan Museum Nasional</h3>
+                            </div>
                         </div>
                     </div>
-                    <h3 class="text-xl font-serif text-stone-900 font-bold text-center">Nama EVP 2</h3>
-                    <p class="text-xs font-semibold text-[#d97706] tracking-widest uppercase mt-1 text-center">Executive Vice President</p>
+                    <div class="gallery-item h-64 md:h-80 bg-stone-200 reveal delay-200 group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Gallery 2" class="w-full h-full object-cover">
+                        <div class="gallery-overlay">
+                            <div class="text-white transform translate-y-4 group-hover:translate-y-0 transition duration-300 text-left">
+                                <p class="text-xs font-bold uppercase tracking-widest text-[#d97706] mb-1">Riset</p>
+                                <h3 class="text-xl font-serif">Arsip Sejarah</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item h-64 md:h-80 bg-stone-200 reveal delay-100 group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Gallery 3" class="w-full h-full object-cover">
+                        <div class="gallery-overlay">
+                            <div class="text-white transform translate-y-4 group-hover:translate-y-0 transition duration-300 text-left">
+                                <p class="text-xs font-bold uppercase tracking-widest text-[#d97706] mb-1">Diskusi</p>
+                                <h3 class="text-xl font-serif">Seminar Pemuda</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item md:col-span-2 h-64 md:h-80 bg-stone-200 reveal delay-200 group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Gallery 4" class="w-full h-full object-cover">
+                        <div class="gallery-overlay">
+                            <div class="text-white transform translate-y-4 group-hover:translate-y-0 transition duration-300 text-left">
+                                <p class="text-xs font-bold uppercase tracking-widest text-[#d97706] mb-1">Dokumentasi</p>
+                                <h3 class="text-xl font-serif">Peninggalan Kolonial</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer id="contact" class="bg-[#111111] text-stone-400 py-12 md:py-16 relative">
+            <div class="max-w-6xl mx-auto px-6 md:px-8 grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-12">
+                
+                <div class="col-span-1 md:col-span-2 text-center md:text-left reveal">
+                    <div class="flex items-center justify-center md:justify-start gap-3 mb-6">
+                        <div class="w-10 h-10 md:w-12 md:h-12 bg-[#d97706] rounded-full flex items-center justify-center text-white font-serif font-bold text-lg md:text-xl">AH</div>
+                        <div class="text-xl md:text-2xl font-bold text-white tracking-wide">ABOUTHISTORY.ID</div>
+                    </div>
+                    <p class="mb-8 max-w-sm mx-auto md:mx-0 text-sm md:text-base leading-relaxed text-stone-400">
+                        Platform edukasi sejarah modern yang mengajak Anda melihat peristiwa masa lalu melalui kacamata yang kritis, mendalam, dan relevan.
+                    </p>
+                    <div class="flex justify-center md:justify-start space-x-4 text-lg">
+                        <a href="#" class="w-10 h-10 rounded-full border border-stone-700 flex items-center justify-center hover:bg-[#d97706] hover:border-[#d97706] hover:text-white transition-all duration-300"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full border border-stone-700 flex items-center justify-center hover:bg-[#d97706] hover:border-[#d97706] hover:text-white transition-all duration-300"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full border border-stone-700 flex items-center justify-center hover:bg-[#d97706] hover:border-[#d97706] hover:text-white transition-all duration-300"><i class="fab fa-twitter"></i></a>
+                    </div>
                 </div>
 
-                <div class="reveal delay-300 flex flex-col w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)]">
-                    <div class="team-card h-[350px] shadow-lg mb-5 group">
-                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="EVP 3">
-                        <div class="team-social">
-                            <a href="#" class="text-white hover:text-[#d97706] transition text-lg"><i class="fab fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-serif text-stone-900 font-bold text-center">Nama EVP 3</h3>
-                    <p class="text-xs font-semibold text-[#d97706] tracking-widest uppercase mt-1 text-center">Executive Vice President</p>
+                <div class="text-center md:text-left reveal delay-100">
+                    <h4 class="text-white font-bold mb-5 md:mb-6 tracking-widest text-sm uppercase">Navigasi</h4>
+                    <ul class="space-y-3 text-sm md:text-base inline-block text-left">
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Dashboard</a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors duration-300">About Us</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors duration-300">Services</a></li>
+                        <li><a href="#gallery" class="hover:text-white transition-colors duration-300">Gallery</a></li>
+                        <li><a href="/team" class="hover:text-white transition-colors duration-300">Team</a></li>
+                        <li><a href="/career" class="hover:text-white transition-colors duration-300">Career</a></li>
+                    </ul>
                 </div>
 
-                <div class="reveal delay-100 flex flex-col w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)]">
-                    <div class="team-card h-[350px] shadow-lg mb-5 group">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="EVP 4">
-                        <div class="team-social">
-                            <a href="#" class="text-white hover:text-[#d97706] transition text-lg"><i class="fab fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-serif text-stone-900 font-bold text-center">Nama EVP 4</h3>
-                    <p class="text-xs font-semibold text-[#d97706] tracking-widest uppercase mt-1 text-center">Executive Vice President</p>
-                </div>
-
-                <div class="reveal delay-200 flex flex-col w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)]">
-                    <div class="team-card h-[350px] shadow-lg mb-5 group">
-                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="EVP 5">
-                        <div class="team-social">
-                            <a href="#" class="text-white hover:text-[#d97706] transition text-lg"><i class="fab fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-serif text-stone-900 font-bold text-center">Nama EVP 5</h3>
-                    <p class="text-xs font-semibold text-[#d97706] tracking-widest uppercase mt-1 text-center">Executive Vice President</p>
+                <div class="text-center md:text-left reveal delay-200">
+                    <h4 class="text-white font-bold mb-5 md:mb-6 tracking-widest text-sm uppercase">Kontak</h4>
+                    <ul class="space-y-4 text-sm inline-block text-left">
+                        <li class="flex items-center justify-start gap-3">
+                            <i class="far fa-envelope text-[#d97706] w-5 text-center"></i> halo@abouthistory.id
+                        </li>
+                        <li class="flex items-center justify-start gap-3">
+                            <i class="fas fa-phone text-[#d97706] w-5 text-center"></i> +62 812 3456 7890
+                        </li>
+                        <li class="flex items-start justify-start gap-3">
+                            <i class="fas fa-map-marker-alt text-[#d97706] w-5 text-center mt-1"></i> 
+                            <span>Tangerang Selatan,<br>Indonesia</span>
+                        </li>
+                    </ul>
                 </div>
 
             </div>
-        </div>
-
-        <div class="max-w-6xl mx-auto px-6 md:px-8 mb-10">
-            <div class="text-center mb-12 reveal">
-                <h2 class="text-2xl md:text-3xl font-serif text-stone-800">Vice President</h2>
-                <div class="w-12 h-1 bg-[#d97706] mx-auto mt-4 rounded-full"></div>
-            </div>
-
-            <div class="flex justify-center reveal delay-100">
-                <div class="bg-stone-200/50 border border-stone-300 border-dashed rounded-2xl p-8 md:p-10 text-center w-full max-w-2xl transition-all duration-300 hover:bg-stone-200">
-                    <div class="w-16 h-16 mx-auto bg-stone-300 text-stone-500 rounded-full flex items-center justify-center text-2xl mb-4 shadow-inner">
-                        <i class="fas fa-user-clock"></i>
-                    </div>
-                    <h3 class="text-lg md:text-xl font-serif text-stone-700 font-bold">Posisi Sedang Disiapkan</h3>
-                    <p class="text-sm md:text-base text-stone-500 mt-2 max-w-md mx-auto leading-relaxed">Susunan struktural untuk jajaran Vice President saat ini sedang dalam tahap penyesuaian dan pembaruan internal.</p>
+            
+            <div class="max-w-6xl mx-auto px-6 md:px-8 mt-12 md:mt-16 pt-8 border-t border-stone-800 flex flex-col md:flex-row items-center justify-between reveal delay-300 gap-4">
+                <div class="text-[10px] md:text-xs tracking-wider text-stone-500 text-center md:text-left">
+                    &copy; 2026 ABOUTHISTORY.ID. ALL RIGHTS RESERVED.
+                </div>
+                <div class="text-[10px] md:text-xs tracking-wider text-stone-500 flex items-center justify-center gap-2">
+                    CRAFTED WITH PASSION <span class="w-6 md:w-8 h-[1px] bg-stone-700 block"></span> TANGERANG SELATAN
                 </div>
             </div>
-        </div>
-
-        <div class="max-w-4xl mx-auto px-6 text-center reveal pt-16 border-t border-stone-200 mt-20">
-            <h2 class="text-2xl md:text-3xl font-serif text-stone-800 mb-4">Ingin Menjadi Bagian dari Kami?</h2>
-            <p class="text-stone-500 text-sm md:text-base mb-8">Kami selalu membuka pintu bagi talenta berbakat yang memiliki semangat menceritakan sejarah.</p>
-            <a href="/career" class="magnetic-btn bg-stone-900 hover:bg-[#d97706] text-white px-8 py-3 rounded-full text-sm font-medium transition-colors duration-300 shadow-lg hover:shadow-xl">
-                Lihat Lowongan Tersedia <i class="fas fa-arrow-right ml-2"></i>
-            </a>
-        </div>
-
+        </footer>
     </main>
-
-    <footer id="contact" class="bg-[#0a0a0a] text-stone-400 py-12 md:py-16 relative z-30">
-        <div class="max-w-6xl mx-auto px-6 md:px-8 grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-12">
-            <div class="col-span-1 md:col-span-2 text-center md:text-left reveal">
-                <div class="flex items-center justify-center md:justify-start mb-6">
-                    <img src="assets/img/logow.png" alt="Logo AboutHistory" class="h-10 md:h-14 w-auto">
-                </div>
-                <p class="mb-8 max-w-sm mx-auto md:mx-0 text-sm md:text-base leading-relaxed text-stone-400">
-                    Platform edukasi sejarah modern yang mengajak Anda melihat peristiwa masa lalu melalui kacamata yang kritis, mendalam, dan relevan.
-                </p>
-                <div class="flex justify-center md:justify-start space-x-4 text-lg">
-                    <a href="#" class="w-10 h-10 rounded-full border border-stone-700 flex items-center justify-center hover:bg-[#d97706] hover:border-[#d97706] hover:text-white transition-all duration-300"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="w-10 h-10 rounded-full border border-stone-700 flex items-center justify-center hover:bg-[#d97706] hover:border-[#d97706] hover:text-white transition-all duration-300"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="w-10 h-10 rounded-full border border-stone-700 flex items-center justify-center hover:bg-[#d97706] hover:border-[#d97706] hover:text-white transition-all duration-300"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-
-            <div class="text-center md:text-left reveal delay-100">
-                <h4 class="text-white font-bold mb-5 md:mb-6 tracking-widest text-sm uppercase">Navigasi</h4>
-                <ul class="space-y-3 text-sm md:text-base inline-block text-left">
-                    <li><a href="/" class="hover:text-white transition-colors duration-300">Dashboard</a></li>
-                    <li><a href="/#about" class="hover:text-white transition-colors duration-300">About Us</a></li>
-                    <li><a href="/#services" class="hover:text-white transition-colors duration-300">Services</a></li>
-                    <li><a href="/#gallery" class="hover:text-white transition-colors duration-300">Gallery</a></li>
-                    <li><a href="/team" class="text-white font-bold transition-colors duration-300">Team</a></li>
-                    <li><a href="/career" class="hover:text-white transition-colors duration-300">Career</a></li>
-                </ul>
-            </div>
-
-            <div class="text-center md:text-left reveal delay-200">
-                <h4 class="text-white font-bold mb-5 md:mb-6 tracking-widest text-sm uppercase">Kontak</h4>
-                <ul class="space-y-4 text-sm inline-block text-left">
-                    <li class="flex items-center justify-start gap-3">
-                        <i class="far fa-envelope text-[#d97706] w-5 text-center"></i> halo@abouthistory.id
-                    </li>
-                    <li class="flex items-center justify-start gap-3">
-                        <i class="fas fa-phone text-[#d97706] w-5 text-center"></i> +62 812 3456 7890
-                    </li>
-                    <li class="flex items-start justify-start gap-3">
-                        <i class="fas fa-map-marker-alt text-[#d97706] w-5 text-center mt-1"></i> 
-                        <span>Tangerang Selatan,<br>Indonesia</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="max-w-6xl mx-auto px-6 md:px-8 mt-12 md:mt-16 pt-8 border-t border-stone-800 flex flex-col md:flex-row items-center justify-between reveal delay-300 gap-4">
-            <div class="text-[10px] md:text-xs tracking-wider text-stone-500 text-center md:text-left">
-                &copy; 2026 PT. Media Historia Nusantara. ALL RIGHTS RESERVED.
-            </div>
-            <div class="text-[10px] md:text-xs tracking-wider text-stone-500 flex items-center justify-center gap-2">
-                CRAFTED WITH PASSION <span class="w-6 md:w-8 h-[1px] bg-stone-700 block"></span> TANGERANG SELATAN
-            </div>
-        </div>
-    </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Scroll Animasi
+            const counters = document.querySelectorAll('.counter');
+            const speed = 100;
+
+            const animateCounter = (counter) => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const increment = target / speed;
+
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(() => animateCounter(counter), 15);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
+
+            const counterObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        counters.forEach(counter => animateCounter(counter));
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const statsSection = document.getElementById('stats-section');
+            if (statsSection) { counterObserver.observe(statsSection); }
+
             const revealElements = document.querySelectorAll('.reveal');
             const revealObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
@@ -421,13 +558,13 @@
 
             revealElements.forEach(el => revealObserver.observe(el));
 
-            // Magnetic Button
             const magneticBtn = document.querySelector('.magnetic-btn');
             if (magneticBtn && window.matchMedia("(pointer: fine)").matches) {
                 magneticBtn.addEventListener('mousemove', (e) => {
                     const rect = magneticBtn.getBoundingClientRect();
                     const x = e.clientX - rect.left - rect.width / 2;
                     const y = e.clientY - rect.top - rect.height / 2;
+                    
                     magneticBtn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
                 });
 
@@ -436,7 +573,6 @@
                 });
             }
 
-            // Mobile Menu
             const btn = document.getElementById('mobile-menu-button');
             const menu = document.getElementById('mobile-menu');
 
@@ -450,6 +586,16 @@
                     icon.classList.remove('fa-times');
                     icon.classList.add('fa-bars');
                 }
+            });
+            
+            const mobileLinks = menu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.remove('open');
+                    const icon = btn.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                });
             });
         });
     </script>
